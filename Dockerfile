@@ -3,7 +3,7 @@ FROM neuroforlunch/gnuradio-companion-base:v1
 
 # Get the building supplies
 RUN add-apt-repository --remove ppa:gnuradio/gnuradio-releases \
-  && apt-get update
+  && apt-get update \
   && apt-get install -yq \
   ca-certificates \
   apt-utils
