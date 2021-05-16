@@ -72,3 +72,19 @@ RUN mkdir -p /src \
   && ldconfig \
   && cd / \
   && rm -rf /src
+
+# Install gr-radar
+RUN mkdir -p /src/build
+RUN git clone https://github.com/kit-cel/gr-radar.git /src/gr-radar \
+  && cd /src/gr-radar/ \
+  && cd build/ cmake ../ \
+  && make \
+  && make install \
+  && ldconfig \
+  && cd / \
+  && rm -rf /src/
+
+
+# Free up some space
+RUN apt-get clean
+RUN apt-get autoclean
