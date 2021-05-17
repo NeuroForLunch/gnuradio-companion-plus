@@ -8,16 +8,22 @@ RUN add-apt-repository --remove ppa:gnuradio/gnuradio-releases \
   ca-certificates \
   apt-utils
 
+RUN apt-get upgrade -yq
+
 RUN apt-get install -yq \
   git \
-  apt-utils \
+  autoconf \
+  libtool \
+  yasm \
   build-essential \
   ccache \
   cmake \
   swig \
   python-dev \
+  python-pip \
   python3-dev \
   python3-dbg \
+  python3-pip \
   xvfb \
   lcov \
   thrift-compiler \
@@ -25,7 +31,7 @@ RUN apt-get install -yq \
 
 
 # Install drivers
-RUN apt-get update && apt-get install -yq \
+RUN apt-get install -yq \
   libusb-dev \
   libusb-1.0-0-dev \
   graphviz \
@@ -74,15 +80,6 @@ RUN mkdir -p /src \
   && rm -rf /src/
 
 
-#Prepare for the radar installation
-RUN apt-get install -yq
-  build-base \
-  autoconf \
-  automake \
-  libtool \
-  texinfo \
-  yasm \
-  --no-install-recommends
 
 
 # Install the Multiple Precision Integers and Rationals Library
