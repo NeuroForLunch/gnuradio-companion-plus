@@ -14,8 +14,10 @@ RUN apt-get install -yq \
   git \
   gettext \
   autoconf \
+  automake \
   autotools-dev \
   libtool \
+  texinfo \
   yasm \
   build-essential \
   ccache \
@@ -37,8 +39,9 @@ RUN apt-get install -yq \
   xvfb \
   lcov \
   thrift-compiler \
-  --no-install-recommends
-
+  gawk \
+  byacc \
+  flex
 
 # Install drivers
 RUN apt-get install -yq \
@@ -52,6 +55,9 @@ RUN apt-get install -yq \
   libgsm1-dev \
   libasound2
 
+
+RUN pip install six \
+  && pip3 install six
 
 # apt-get sources are outdated for the programs that follow
 
@@ -88,3 +94,26 @@ RUN mkdir -p /src \
   && ldconfig \
   && cd / \
   && rm -rf /src/
+
+
+# Install the Multiple Precision Integers and Rationals Library
+RUN mkdir -p /src \
+  && git clone https://github.com/wbhart/mpir.git /src/mpir \
+  && cd /src/mpir/ \
+  && ./autogen.sh \
+  && ./configure --enable-cxx=detect \
+  && make \
+  && make install \
+  && ldconfig \
+  && rm -rf /src
+
+
+
+# Install the GNU Multiple Precision Arithmetic Library
+RUN mkdir -p /opt \
+  && git clone https://github.com/NeuroForLunch/gmp-releases.git /opt/gmp/ \
+  && cd /opt/gmp/ \
+  && sh ./configure --enable-cxx=detect \
+  && make \
+  && make install \
+  && ldconfig
