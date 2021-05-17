@@ -12,13 +12,23 @@ RUN apt-get upgrade -yq
 
 RUN apt-get install -yq \
   git \
+  gettext \
   autoconf \
+  autotools-dev \
   libtool \
   yasm \
   build-essential \
   ccache \
   cmake \
   swig \
+  libqt4-dev \
+  libqwt-dev \
+  libqwt5-qt4 \
+  libqwt-qt5-dev \
+  libqwt6abi1 \
+  qtbase5-dev \
+  pyqt4-dev-tools \
+  pyqt5-dev-tools \
   python-dev \
   python-pip \
   python3-dev \
@@ -78,48 +88,3 @@ RUN mkdir -p /src \
   && ldconfig \
   && cd / \
   && rm -rf /src/
-
-
-
-
-# Install the Multiple Precision Integers and Rationals Library
-RUN mkdir -p /src \
-  && git clone --depth 1 https://github.com/wbhart/mpir.git /src/mpir \
-  && cd /src/mpir \
-  && ./autogen.sh \
-	&& ./configure --enable-cxx=detect \
-  && make check \
-	&& make install \
-  && rm -rf /src
-
-
-# Install the GNU Multiple Precision Arithmetic Library
-RUN mkdir -p /src \
-  && git clone https://github.com/NeuroForLunch/gmp-releases.git /src/gmp \
-  && cd /src/gmp \
-	&& ./configure --enable-cxx=detect \
-	&& make check \
-	&& make install \
-  && rm -rf /src
-
-
-
-# Install gr-radar
-RUN mkdir -p /src \
-  && cd /src \
-  && git clone https://github.com/kit-cel/gr-radar.git /src/gr-radar \
-  && cd gr-radar \
-  && mkdir build \
-  && cd build/ \
-  && cmake ../ \
-  && make \
-  && make install \
-  && ldconfig \
-  && cd / \
-  && rm -rf /src/
-
-
-# Free up some space
-# RUN apt-get upgrade -yq
-# RUN apt-get clean
-# RUN apt-get autoclean
