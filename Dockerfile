@@ -63,7 +63,7 @@ RUN cd /src/build \
 # Install SoapySDR
 RUN mkdir -p /src \
   && cd /src \
-  && git clone -b soapy-sdr-0.8.0 https://github.com/pothosware/SoapySDR/ \
+  && git clone -b soapy-sdr-0.8.0 https://github.com/pothosware/SoapySDR \
   && cd SoapySDR \
   && mkdir build \
   && cd build \
@@ -71,13 +71,50 @@ RUN mkdir -p /src \
   && make install \
   && ldconfig \
   && cd / \
+  && rm -rf /src/
+
+
+#Prepare for the radar installation
+RUN apt-get install -yq
+  build-base \
+  autoconf \
+  automake \
+  libtool \
+  texinfo \
+  yasm \
+  --no-install-recommends
+
+
+# Install the Multiple Precision Integers and Rationals Library
+RUN mkdir -p /src \
+  && git clone --depth 1 https://github.com/wbhart/mpir.git /src/mpir \
+  && cd /src/mpir \
+  && ./autogen.sh \
+	&& ./configure --enable-cxx=detect \
+  && make check \
+	&& make install \
   && rm -rf /src
 
+
+# Install the GNU Multiple Precision Arithmetic Library
+RUN mkdir -p /src \
+  && git clone https://github.com/NeuroForLunch/gmp-releases.git /src/gmp \
+  && cd /src/gmp \
+	&& ./configure --enable-cxx=detect \
+	&& make check \
+	&& make install \
+  && rm -rf /src
+
+
+
 # Install gr-radar
-RUN mkdir -p /src/build
-RUN git clone https://github.com/kit-cel/gr-radar.git /src/gr-radar \
-  && cd /src/gr-radar/ \
-  && cd build/ cmake ../ \
+RUN mkdir -p /src \
+  && cd /src \
+  && git clone https://github.com/kit-cel/gr-radar.git /src/gr-radar \
+  && cd gr-radar \
+  && mkdir build \
+  && cd build/ \
+  && cmake ../ \
   && make \
   && make install \
   && ldconfig \
@@ -86,5 +123,6 @@ RUN git clone https://github.com/kit-cel/gr-radar.git /src/gr-radar \
 
 
 # Free up some space
-RUN apt-get clean
-RUN apt-get autoclean
+# RUN apt-get upgrade -yq
+# RUN apt-get clean
+# RUN apt-get autoclean
