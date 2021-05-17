@@ -4,9 +4,9 @@ RUN pip install six
 
 # Install the Multiple Precision Integers and Rationals Library
 RUN mkdir -p /src \
-  && git clone --depth 1 https://github.com/wbhart/mpir.git /src/mpir/ \
+  && git clone https://github.com/wbhart/mpir.git /src/mpir/ \
   && cd /src/mpir/ \
-	&& sh ./configure --enable-cxx=detect \
+	&& ./configure --enable-cxx=detect \
   && make \
 	&& make install \
   && ldconfig \
