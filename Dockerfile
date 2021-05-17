@@ -2,7 +2,7 @@ FROM neuroforlunch/gnuradio-companion-plus:p1
 
 RUN pip install six
 
-RUN apt-get install -yq gmplib-dev
+RUN apt-get install -yq libgmp-dev
 
 
 # Install gr-radar
