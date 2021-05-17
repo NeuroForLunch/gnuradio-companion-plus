@@ -2,27 +2,7 @@ FROM neuroforlunch/gnuradio-companion-plus:p1
 
 RUN pip install six
 
-# Install the Multiple Precision Integers and Rationals Library
-RUN mkdir -p /src \
-  && git clone --depth 1 https://github.com/wbhart/mpir.git /src/mpir \
-  && cd /src/mpir/ \
-	&& ./configure --enable-cxx=detect \
-  && make \
-	&& make install \
-  && ldconfig \
-  && rm -rf /src
-
-
-# Install the GNU Multiple Precision Arithmetic Library
-RUN mkdir -p /src \
-  && git clone https://github.com/NeuroForLunch/gmp-releases.git /src/gmp/ \
-  && cd /src/gmp/ \
-	&& sh ./configure --enable-cxx=detect \
-  && make \
-	&& make install \
-  && ldconfig \
-  && rm -rf /src
-
+RUN apt-get install -yq gmplib-dev
 
 
 # Install gr-radar
@@ -38,9 +18,3 @@ RUN mkdir -p /src \
   && ldconfig \
   && cd / \
   && rm -rf /src/
-
-
-# Free up some space
-# RUN apt-get upgrade -yq
-# RUN apt-get clean
-# RUN apt-get autoclean
