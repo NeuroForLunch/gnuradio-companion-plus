@@ -7,6 +7,7 @@ RUN pip install six
 RUN mkdir -p /src \
   && cd /src \
   && git clone -b maint-3.8 https://github.com/gnuradio/gnuradio.git /src/gnuradio \
+  && Gnuradio_DIR=/src/gnuradio/cmake/modules \
   && git clone https://github.com/kit-cel/gr-radar.git /src/gr-radar \
   && cd gr-radar/ \
   && mkdir build \
