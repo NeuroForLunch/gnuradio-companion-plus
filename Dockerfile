@@ -9,13 +9,9 @@ RUN apt-get install \
   libboost-thread-dev \
   libboost-regex-dev \
   libboost-test-dev \
-  python3-mako \
-  python3-dev \
-  gnuradio-dev \
   libsoapysdr-dev \
   libconfig++-dev \
   libgmp-dev \
-  liborc-0.4-0 \
   liborc-0.4-dev \
   liborc-0.4-dev-bin
 
