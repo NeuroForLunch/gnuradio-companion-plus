@@ -1,6 +1,6 @@
 FROM neuroforlunch/gnuradio-companion-plus:p1
 
-RUN apt-get install \
+RUN apt-get install -yq \
   libboost-dev \
   libboost-date-time-dev \
   libboost-filesystem-dev \
@@ -9,11 +9,11 @@ RUN apt-get install \
   libboost-thread-dev \
   libboost-regex-dev \
   libboost-test-dev \
-  libsoapysdr-dev \
   libconfig++-dev \
-  libgmp-dev \
   liborc-0.4-dev \
   liborc-0.4-dev-bin
+
+#  libgmp-dev \
 
 
 # Install gr-osmosdr
