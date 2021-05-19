@@ -588,8 +588,6 @@ libmpx2-dbg \
 libquadmath0-dbg \
 parcimonie \
 xloadimage \
-gr-fosphor \
-gr-osmosdr \
 cmake \
 qtbase5-dev \
 libqwt-qt5-dev \
