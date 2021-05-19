@@ -1,61 +1,723 @@
-FROM neuroforlunch/gnuradio-companion-plus:p1
+FROM neuroforlunch/gnuradio-companion-plus:p2
 
 RUN apt-get install -yq \
-  libboost-dev \
-  libboost-date-time-dev \
-  libboost-filesystem-dev \
-  libboost-program-options-dev \
-  libboost-system-dev \
-  libboost-thread-dev \
-  libboost-regex-dev \
-  libboost-test-dev \
-  libconfig++-dev \
-  liborc-0.4-dev \
-  liborc-0.4-dev-bin
+binutils \
+binutils-common \
+binutils-x86-64-linux-gnu \
+blt \
+build-essential \
+cpp-7 \
+dh-python \
+dirmngr \
+dpkg-dev \
+fakeroot \
+fonts-lyx \
+freeglut3 \
+g++ \
+g++-7 \
+gcc \
+gcc-7 \
+gcc-7-base \
+gcc-8-base \
+gir1.2-atk-1.0 \
+gir1.2-freedesktop \
+gir1.2-gdkpixbuf-2.0 \
+gir1.2-harfbuzz-0.0 \
+gir1.2-pango-1.0 \
+gnupg \
+gnupg-l10n \
+gnupg-utils \
+gpg \
+gpg-agent \
+gpg-wks-client \
+gpg-wks-server \
+gpgconf \
+gpgsm \
+gpgv \
+icu-devtools \
+javascript-common \
+libalgorithm-diff-perl \
+libalgorithm-diff-xs-perl \
+libalgorithm-merge-perl \
+libasan4 \
+libatomic1 \
+libaudio2 \
+libbinutils \
+libblas3 \
+libboost-atomic1.65-dev \
+libboost-atomic1.65.1 \
+libboost-chrono1.65-dev \
+libboost-chrono1.65.1 \
+libboost-date-time-dev \
+libboost-date-time1.65-dev \
+libboost-date-time1.65.1 \
+libboost-filesystem-dev \
+libboost-filesystem1.65-dev \
+libboost-filesystem1.65.1 \
+libboost-program-options-dev \
+libboost-program-options1.65-dev \
+libboost-program-options1.65.1 \
+libboost-regex-dev \
+libboost-regex1.65-dev \
+libboost-regex1.65.1 \
+libboost-serialization1.65-dev \
+libboost-serialization1.65.1 \
+libboost-system-dev \
+libboost-system1.65-dev \
+libboost-system1.65.1 \
+libboost-test-dev \
+libboost-test1.65-dev \
+libboost-test1.65.1 \
+libboost-thread-dev \
+libboost-thread1.65-dev
+libboost-thread1.65.1 \
+libboost1.65-dev
 
-#  libgmp-dev \
+
+RUN apt-get install -yq \
+libc-dev-bin \
+libc6 \
+libc6-dev \
+libcanberra-gtk-module \
+libcanberra-gtk0 \
+libcanberra-gtk3-0 \
+libcanberra-gtk3-module \
+libcanberra0 \
+libcc1-0 \
+libcilkrts5 \
+libcodec2-0.7
+libcppunit-1.14-0 \
+libcppunit-dev \
+libdouble-conversion1 \
+libdpkg-perl \
+libevdev2 \
+libexpat1-dev \
+libfakeroot \
+libfftw3-bin \
+libfftw3-dev \
+libfftw3-long3 \
+libfftw3-quad3 \
+libfile-fcntllock-perl \
+libgcc-7-dev \
+libgcc1 \
+libgdbm-compat4 \
+libgfortran4 \
+libglib2.0-0 \
+libglib2.0-bin \
+libglib2.0-data \
+libglib2.0-dev \
+libglib2.0-dev-bin \
+libglu1-mesa \
+libgmp-dev \
+libgmpxx4ldbl \
+libgomp1 \
+libgraphite2-dev \
+libgsl23 \
+libgslcblas0 \
+libgsm1-dev \
+libharfbuzz-dev \
+libharfbuzz-gobject0 \
+libicu-dev \
+libicu-le-hb-dev \
+libicu-le-hb0 \
+libicu60 \
+libiculx60 \
+libinput-bin \
+libinput10 \
+libitm1 \
+libjs-jquery \
+libjs-jquery-ui
+
+RUN apt-get install -yq \
+libksba8 \
+liblapack3 \
+liblocale-gettext-perl \
+liblog4cpp5-dev \
+liblog4cpp5v5 \
+liblsan0 \
+libltdl7 \
+libmng2 \
+libmpx2 \
+libmtdev1 \
+libmysqlclient20 \
+libnpth0 \
+libpcre16-3 \
+libpcre3-dev \
+libpcre32-3 \
+libpcrecpp0v5 \
+libperl5.26 \
+libportaudio2 \
+libpython3-dev \
+libpython3.6 \
+libpython3.6-dev \
+libpython3.6-minimal \
+libpython3.6-stdlib \
+libqt4-dbus \
+libqt4-declarative \
+libqt4-designer \
+libqt4-help \
+libqt4-network \
+libqt4-script \
+libqt4-scripttools \
+libqt4-sql \
+libqt4-sql-mysql \
+libqt4-svg \
+libqt4-test \
+libqt4-xml \
+libqt4-xmlpatterns \
+libqt5core5a \
+libqt5dbus5 \
+libqt5designer5 \
+libqt5gui5 \
+libqt5help5 \
+libqt5network5 \
+libqt5opengl5 \
+libqt5printsupport5 \
+libqt5sql5 \
+libqt5sql5-sqlite \
+libqt5svg5 \
+libqt5test5 \
+libqt5widgets5 \
+libqt5xml5 \
+libqtassistantclient4 \
+libqtcore4 \
+libqtdbus4 \
+libqtgui4
+
+RUN apt-get install -yq \
+libquadmath0 \
+libqwt-qt5-6 \
+librtlsdr0 \
+libsdl1.2debian \
+libstdc++-7-dev \
+libstdc++6 \
+libtdb1 \
+libtsan0 \
+libubsan0 \
+libuhd003.010.003 \
+libvolk2-bin \
+libvolk2-dev \
+libvolk2.0 \
+libvolk2.2 \
+libwacom-bin \
+libwacom-common \
+libwacom2 \
+libxcb-icccm4 \
+libxcb-image0 \
+libxcb-keysyms1 \
+libxcb-randr0 \
+libxcb-render-util0 \
+libxcb-xinerama0 \
+libxcb-xkb1 \
+libxkbcommon-x11-0 \
+libxkbcommon0 \
+libyaml-0-2 \
+linux-libc-dev \
+make \
+manpages \
+manpages-dev \
+mysql-common \
+netbase \
+patch \
+perl \
+perl-base \
+perl-modules-5.26 \
+pinentry-curses \
+pkg-config \
+python-asn1crypto \
+python-certifi \
+python-cffi-backend \
+python-chardet \
+python-cryptography \
+python-enum34 \
+python-idna \
+python-ipaddress \
+python-matplotlib-data \
+python-openssl \
+python-requests \
+python-six \
+python-tk \
+python-urllib3 \
+python3-bs4 \
+python3-cairo \
+python3-chardet \
+python3-click \
+python3-click-plugins \
+python3-colorama \
+python3-cycler \
+python3-dateutil \
+python3-decorator \
+python3-dev \
+python3-distutils \
+python3-gi-cairo \
+python3-html5lib \
+python3-lib2to3 \
+python3-lxml \
+python3-mako \
+python3-markupsafe \
+python3-matplotlib \
+python3-networkx \
+python3-numpy \
+python3-olefile \
+python3-opengl \
+python3-pil \
+python3-pkg-resources \
+python3-pyparsing \
+python3-pyqt4 \
+python3-pyqt5 \
+python3-pyqtgraph \
+python3-scipy \
+python3-sip \
+python3-six \
+python3-tk \
+python3-tz \
+python3-webencodings \
+python3-yaml \
+python3-zmq \
+python3.6 \
+python3.6-dev \
+python3.6-minimal
+
+RUN apt-get install -yq \
+qdbus \
+qt-at-spi \
+qt5-gtk-platformtheme \
+qtchooser \
+qtcore4-l10n \
+qttranslations5-l10n \
+rtl-sdr \
+sound-theme-freedesktop \
+tk8.6-blt2.5 \
+ttf-bitstream-vera \
+uhd-host \
+zlib1g-dev
+binutils \
+binutils-common \
+binutils-x86-64-linux-gnu \
+blt \
+build-essential \
+dh-python \
+dirmngr \
+dpkg-dev \
+fakeroot \
+fonts-lyx \
+freeglut3 \
+g++ \
+g++-7 \
+gcc \
+gcc-7 \
+gir1.2-atk-1.0 \
+gir1.2-freedesktop \
+gir1.2-gdkpixbuf-2.0 \
+gir1.2-gtk-3.0 \
+gir1.2-harfbuzz-0.0 \
+gir1.2-pango-1.0 \
+gnupg \
+gnupg-l10n \
+gnupg-utils \
+gpg-agent \
+gpg-wks-client \
+gpg-wks-server \
+gpgsm \
+icu-devtools \
+javascript-common \
+libalgorithm-diff-perl \
+libalgorithm-diff-xs-perl \
+libalgorithm-merge-perl \
+libasan4
+
+RUN apt-get install -yq \
+libatomic1 \
+libaudio2 \
+libbinutils \
+libblas3 \
+libboost-atomic1.65-dev \
+libboost-atomic1.65.1 \
+libboost-chrono1.65-dev
+libboost-chrono1.65.1 \
+libboost-date-time-dev \
+libboost-date-time1.65-dev \
+libboost-date-time1.65.1 \
+libboost-filesystem-dev \
+libboost-filesystem1.65-dev
+libboost-filesystem1.65.1 \
+libboost-program-options-dev \
+libboost-program-options1.65-dev \
+libboost-program-options1.65.1 \
+libboost-regex-dev \
+libboost-regex1.65-dev \
+libboost-regex1.65.1
+libboost-serialization1.65-dev \
+libboost-serialization1.65.1 \
+libboost-system-dev \
+libboost-system1.65-dev \
+libboost-system1.65.1
+libboost-test-dev \
+libboost-test1.65-dev \
+libboost-test1.65.1
+libboost-thread-dev \
+libboost-thread1.65-dev \
+libboost-thread1.65.1
+libboost1.65-dev \
+libc-dev-bin \
+libc6-dev \
+libcanberra-gtk-module \
+libcanberra-gtk0 \
+libcanberra-gtk3-0 \
+libcanberra-gtk3-module \
+libcanberra0
+libcc1-0 \
+libcilkrts5 \
+libcodec2-0.7 \
+libcppunit-1.14-0 \
+libcppunit-dev \
+libdouble-conversion1 \
+libdpkg-perl \
+libevdev2 \
+libexpat1-dev
+
+RUN apt-get install -yq \
+libfakeroot \
+libfftw3-bin \
+libfftw3-dev \
+libfftw3-long3 \
+libfftw3-quad3 \
+libfile-fcntllock-perl \
+libgcc-7-dev \
+libgdbm-compat4 \
+libgfortran4 \
+libglib2.0-bin \
+libglib2.0-data \
+libglib2.0-dev \
+libglib2.0-dev-bin \
+libglu1-mesa \
+libgmp-dev \
+libgmpxx4ldbl \
+libgraphite2-dev \
+libgsl23 \
+libgslcblas0 \
+libgsm1-dev \
+libharfbuzz-dev \
+libharfbuzz-gobject0 \
+libicu-dev \
+libicu-le-hb-dev \
+libicu-le-hb0 \
+libiculx60 \
+libinput-bin \
+libinput10 \
+libitm1 \
+libjs-jquery \
+libjs-jquery-ui \
+libksba8 \
+liblapack3 \
+liblocale-gettext-perl \
+liblog4cpp5-dev \
+liblog4cpp5v5 \
+liblsan0 \
+libltdl7 \
+libmng2 \
+libmpx2 \
+libmtdev1 \
+libmysqlclient20 \
+libnpth0 \
+libpcre16-3 \
+libpcre3-dev \
+libpcre32-3 \
+libpcrecpp0v5 \
+libperl5.26 \
+libportaudio2 \
+libpython3-dev \
+libpython3.6 \
+libpython3.6-dev \
+libqt4-dbus \
+libqt4-declarative \
+libqt4-designer \
+libqt4-help \
+libqt4-network \
+libqt4-script
+libqt4-scripttools \
+libqt4-sql \
+libqt4-sql-mysql \
+libqt4-svg \
+libqt4-test
+libqt4-xml \
+libqt4-xmlpatterns
+
+RUN apt-get install -yq \
+libqt5core5a \
+libqt5dbus5 \
+libqt5designer5 \
+libqt5gui5 \
+libqt5help5 \
+libqt5network5 \
+libqt5opengl5 \
+libqt5printsupport5 \
+libqt5sql5 \
+libqt5sql5-sqlite \
+libqt5svg5 \
+libqt5test5 \
+libqt5widgets5 \
+libqt5xml5 \
+libqtassistantclient4 \
+libqtcore4 \
+libqtdbus4 \
+libqtgui4 \
+libqwt-qt5-6 \
+librtlsdr0 \
+libsdl1.2debian \
+libstdc++-7-dev \
+libtdb1 \
+libtsan0 \
+libubsan0 \
+libuhd003.010.003 \
+libvolk2-bin \
+libvolk2-dev \
+libvolk2.0 \
+libvolk2.2 \
+libwacom-bin \
+libwacom-common \
+libwacom2 \
+libxcb-icccm4 \
+libxcb-image0
+libxcb-keysyms1 \
+libxcb-randr0 \
+libxcb-render-util0 \
+libxcb-xinerama0 \
+libxcb-xkb1 \
+libxkbcommon-x11-0 \
+libyaml-0-2 \
+linux-libc-dev \
+make \
+manpages \
+manpages-dev \
+mysql-common \
+netbase \
+patch \
+perl \
+perl-modules-5.26 \
+pinentry-curses \
+pkg-config \
+python-asn1crypto \
+python-certifi
+python-cffi-backend \
+python-chardet \
+python-cryptography \
+python-enum34
+python-idna \
+python-ipaddress \
+python-matplotlib-data \
+python-openssl \
+python-requests \
+python-six \
+python-tk \
+python-urllib3 \
+python3-bs4 \
+python3-cairo \
+python3-chardet \
+python3-click \
+python3-click-plugins \
+python3-colorama \
+python3-cycler \
+python3-dateutil \
+python3-decorator \
+python3-dev \
+python3-distutils \
+python3-gi-cairo \
+python3-html5lib \
+python3-lib2to3 \
+python3-lxml \
+python3-mako \
+python3-markupsafe \
+python3-matplotlib \
+python3-networkx \
+python3-numpy \
+python3-olefile
+python3-opengl \
+python3-pil \
+python3-pkg-resources \
+python3-pyparsing
+python3-pyqt4 \
+python3-pyqt5 \
+python3-pyqtgraph \
+python3-scipy \
+python3-sip \
+python3-six \
+python3-tk \
+python3-tz \
+python3-webencodings \
+python3-yaml \
+python3-zmq \
+python3.6-dev \
+qdbus \
+qt-at-spi \
+qt5-gtk-platformtheme \
+qtchooser
+qtcore4-l10n \
+qttranslations5-l10n \
+rtl-sdr \
+sound-theme-freedesktop \
+tk8.6-blt2.5 \
+ttf-bitstream-vera \
+uhd-host \
+zlib1g-dev \
 
 
-# Install gr-osmosdr
-RUN mkdir -p /src \
-  && cd /src \
-  && git clone -b gr3.8 https://github.com/osmocom/gr-osmosdr.git \
-  && cd gr-osmosdr/ \
-  && mkdir build \
-  && cd build \
-  && cmake ../ \
-  && make \
-  && make install \
-  && ldconfig \
-  && cd / \
-  && rm -rf /src/
+
+RUN apt-get install -yq \
+binutils-doc \
+blt-demo \
+gcc-7-locales \
+dbus-user-session \
+pinentry-gnome3 \
+tor \
+debian-keyring \
+g++-multilib \
+g++-7-multilib \
+gcc-7-doc \
+libstdc++6-7-dbg \
+gcc-multilib \
+autoconf \
+automake \
+libtool \
+flex \
+bison \
+gdb \
+gcc-doc \
+gcc-7-multilib \
+libgcc1-dbg \
+libgomp1-dbg \
+libitm1-dbg \
+libatomic1-dbg \
+libasan4-dbg \
+liblsan0-dbg \
+libtsan0-dbg \
+libubsan0-dbg \
+libcilkrts5-dbg \
+libmpx2-dbg \
+libquadmath0-dbg \
+parcimonie \
+xloadimage \
+gr-fosphor \
+gr-osmosdr \
+cmake \
+qtbase5-dev \
+libqwt-qt5-dev \
+swig \
+scdaemon \
+nas \
+libboost1.65-doc \
+libboost-container1.65-dev \
+libboost-context1.65-dev
+libboost-coroutine1.65-dev \
+libboost-exception1.65-dev \
+libboost-fiber1.65-dev \
+libboost-graph1.65-dev \
+libboost-graph-parallel1.65-dev \
+libboost-iostreams1.65-dev \
+libboost-locale1.65-dev \
+libboost-log1.65-dev \
+libboost-math1.65-dev \
+libboost-mpi1.65-dev \
+libboost-mpi-python1.65-dev \
+libboost-numpy1.65-dev \
+libboost-python1.65-dev \
+libboost-random1.65-dev
+libboost-signals1.65-dev \
+libboost-stacktrace1.65-dev \
+libboost-timer1.65-dev \
+libboost-type-erasure1.65-dev \
+libboost-wave1.65-dev \
+libboost1.65-tools-dev \
+libmpfrc++-dev \
+libntl-dev \
+glibc-doc \
+locales \
+libcanberra-pulse \
+libcppunit-doc \
+git \
+bzr \
+libfftw3-doc \
+libglib2.0-doc \
+gmp-doc \
+libgmp10-doc \
+libmpfr-dev \
+libgraphite2-utils
 
 
-# Install SoapyRTLSDR
-RUN mkdir -p /src \
-  && cd /src \
-  && git clone https://github.com/pothosware/SoapyRTLSDR.git \
-  && cd SoapyRTLSDR/ \
-  && mkdir build \
-  && cd build \
-  && cmake .. \
-  && make \
-  && make install \
-  && ldconfig \
-  && cd / \
-  && rm -rf /src/
+RUN apt-get install -yq \
+gsl-ref-psdoc \
+gsl-doc-pdf \
+gsl-doc-info \
+gsl-ref-html \
+icu-doc \
+libjs-jquery-ui-docs \
+libqt4-declarative-folderlistmodel \
+libqt4-declarative-gestures \
+libqt4-declarative-particles
+libqt4-declarative-shaders \
+qt4-qmlviewer \
+libqt4-dev \
+qt5-image-formats-plugins \
+qtwayland5 \
+libicu55 \
+qt4-qtconfig \
+libstdc++-7-doc \
+libvolk2-doc \
+make-doc \
+man-browser \
+ed \
+diffutils-doc \
+perl-doc \
+libterm-readline-gnu-perl \
 
 
-# Install gr-soapy
-RUN mkdir -p /src \
-  && cd /src \
-  && git clone https://gitlab.com/librespacefoundation/gr-soapy.git \
-  && cd gr-soapy \
-  && mkdir build \
-  && cd build \
-  && cmake .. \
-  && make \
-  && make install \
-  && ldconfig \
-  && cd / \
-  && rm -rf /src/
+
+RUN apt-get install -yq \
+libterm-readline-perl-perl \
+pinentry-doc \
+python-cryptography-doc \
+python-cryptography-vectors \
+python-enum34-doc \
+python-openssl-doc \
+python-openssl-dbg \
+python-socks \
+tix \
+python-tk-dbg \
+python-ntlm \
+python-cycler-doc \
+python3-genshi \
+python3-lxml-dbg
+python-lxml-doc \
+python3-beaker \
+python-mako-doc \
+dvipng \
+ghostscript \
+inkscape \
+ipython3 \
+python-matplotlib-doc \
+python3-cairocffi \
+python3-gobject \
+python3-nose \
+python3-tornado \
+texlive-extra-utils \
+texlive-latex-extra \
+ttf-staypuft \
+python3-pydotplus \
+gfortran \
+python-numpy-doc \
+python3-numpy-dbg \
+libgle3 \
+python-pil-doc \
+python3-pil-dbg \
+python3-setuptools \
+python-pyparsing-doc \
+python3-pyqt4-dbg \
+python3-pyqt5-dbg \
+python-pyqtgraph-doc \
+python-scipy-doc \
+python3-tk-dbg \
+python3.6-venv \
+python3.6-doc \
+binfmt-support \
+python3-qwt-qt5 \
+xdg-user-dirs
