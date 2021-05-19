@@ -1,6 +1,4 @@
-FROM neuroforlunch/gnuradio-companion-plus:p1
-
-RUN pip install six
+FROM neuroforlunch/gnuradio-companion-plus:p3
 
 
 # Install gr-radar
