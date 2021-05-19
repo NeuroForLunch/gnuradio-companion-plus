@@ -339,25 +339,25 @@ libboost-date-time-dev \
 libboost-date-time1.65-dev \
 libboost-date-time1.65.1 \
 libboost-filesystem-dev \
-libboost-filesystem1.65-dev
+libboost-filesystem1.65-dev \
 libboost-filesystem1.65.1 \
 libboost-program-options-dev \
 libboost-program-options1.65-dev \
 libboost-program-options1.65.1 \
 libboost-regex-dev \
 libboost-regex1.65-dev \
-libboost-regex1.65.1
+libboost-regex1.65.1 \
 libboost-serialization1.65-dev \
 libboost-serialization1.65.1 \
 libboost-system-dev \
 libboost-system1.65-dev \
-libboost-system1.65.1
+libboost-system1.65.1 \
 libboost-test-dev \
 libboost-test1.65-dev \
 libboost-test1.65.1
 libboost-thread-dev \
 libboost-thread1.65-dev \
-libboost-thread1.65.1
+libboost-thread1.65.1 \
 libboost1.65-dev \
 libc-dev-bin \
 libc6-dev \
@@ -434,7 +434,7 @@ libqt4-declarative \
 libqt4-designer \
 libqt4-help \
 libqt4-network \
-libqt4-script
+libqt4-script \
 libqt4-scripttools \
 libqt4-sql \
 libqt4-sql-mysql \
@@ -498,11 +498,11 @@ perl-modules-5.26 \
 pinentry-curses \
 pkg-config \
 python-asn1crypto \
-python-certifi
+python-certifi \
 python-cffi-backend \
 python-chardet \
 python-cryptography \
-python-enum34
+python-enum34 \
 python-idna \
 python-ipaddress \
 python-matplotlib-data \
@@ -535,7 +535,7 @@ python3-olefile
 python3-opengl \
 python3-pil \
 python3-pkg-resources \
-python3-pyparsing
+python3-pyparsing \
 python3-pyqt4 \
 python3-pyqt5 \
 python3-pyqtgraph \
@@ -551,10 +551,9 @@ python3.6-dev \
 qdbus \
 qt-at-spi \
 qt5-gtk-platformtheme \
-qtchooser
+qtchooser \
 qtcore4-l10n \
 qttranslations5-l10n \
-rtl-sdr \
 sound-theme-freedesktop \
 tk8.6-blt2.5 \
 ttf-bitstream-vera \
@@ -607,7 +606,7 @@ scdaemon \
 nas \
 libboost1.65-doc \
 libboost-container1.65-dev \
-libboost-context1.65-dev
+libboost-context1.65-dev \
 libboost-coroutine1.65-dev \
 libboost-exception1.65-dev \
 libboost-fiber1.65-dev \
@@ -653,7 +652,7 @@ icu-doc \
 libjs-jquery-ui-docs \
 libqt4-declarative-folderlistmodel \
 libqt4-declarative-gestures \
-libqt4-declarative-particles
+libqt4-declarative-particles \
 libqt4-declarative-shaders \
 qt4-qmlviewer \
 libqt4-dev \
@@ -668,7 +667,7 @@ man-browser \
 ed \
 diffutils-doc \
 perl-doc \
-libterm-readline-gnu-perl \
+libterm-readline-gnu-perl
 
 
 
@@ -686,7 +685,7 @@ python-tk-dbg \
 python-ntlm \
 python-cycler-doc \
 python3-genshi \
-python3-lxml-dbg
+python3-lxml-dbg \
 python-lxml-doc \
 python3-beaker \
 python-mako-doc \
