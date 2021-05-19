@@ -290,7 +290,7 @@ sound-theme-freedesktop \
 tk8.6-blt2.5 \
 ttf-bitstream-vera \
 uhd-host \
-zlib1g-dev
+zlib1g-dev \
 binutils \
 binutils-common \
 binutils-x86-64-linux-gnu \
