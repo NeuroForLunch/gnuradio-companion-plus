@@ -1,7 +1,15 @@
-FROM neuroforlunch/gnuradio-companion-plus:p1
+FROM neuroforlunch/gnuradio-companion-plus:p2
 
-
-# Free up some space
-RUN apt-get upgrade -yq
-RUN apt-get clean
-RUN apt-get autoclean
+# Install gr-fosphor
+RUN mkdir -p /src \
+  && cd /src \
+  && git clone -b gr3.8 https://github.com/osmocom/gr-fosphor.git \
+  && cd gr-fosphor \
+  && mkdir build \
+  && cd build \
+  && cmake .. \
+  && make \
+  && make install \
+  && ldconfig \
+  && cd / \
+  && rm -rf /src/
