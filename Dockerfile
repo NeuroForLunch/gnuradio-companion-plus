@@ -195,8 +195,6 @@ libtdb1 \
 libtsan0 \
 libubsan0 \
 libuhd003.010.003 \
-lib
-2-bin \
 libwacom-bin \
 libwacom-common \
 libwacom2 \
