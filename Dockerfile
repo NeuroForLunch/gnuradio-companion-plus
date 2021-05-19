@@ -478,7 +478,7 @@ libwacom-bin \
 libwacom-common \
 libwacom2 \
 libxcb-icccm4 \
-libxcb-image0
+libxcb-image0 \
 libxcb-keysyms1 \
 libxcb-randr0 \
 libxcb-render-util0 \
