@@ -619,10 +619,8 @@ libboost-wave1.65-dev \
 libboost1.65-tools-dev \
 libmpfrc++-dev \
 libntl-dev \
-glibc-doc \
 locales \
 libcanberra-pulse \
-libcppunit-doc \
 git \
 bzr \
 libfftw3-doc \
@@ -643,30 +641,20 @@ qt4-qmlviewer \
 libqt4-dev \
 qt5-image-formats-plugins \
 qtwayland5 \
-libicu55 \
 qt4-qtconfig \
-make-doc \
-man-browser \
 ed \
-diffutils-doc \
-perl-doc \
 libterm-readline-gnu-perl
 
 
 
 RUN apt-get install -yq \
 libterm-readline-perl-perl \
-pinentry-doc \
-python-cryptography-doc \
 python-cryptography-vectors \
-python-enum34-doc \
-python-openssl-doc \
 python-openssl-dbg \
 python-socks \
 tix \
 python-tk-dbg \
 python-ntlm \
-python-cycler-doc \
 python3-genshi \
 python3-lxml-dbg \
 python-lxml-doc \
@@ -686,20 +674,14 @@ texlive-latex-extra \
 ttf-staypuft \
 python3-pydotplus \
 gfortran \
-python-numpy-doc \
 python3-numpy-dbg \
 libgle3 \
-python-pil-doc \
 python3-pil-dbg \
 python3-setuptools \
-python-pyparsing-doc \
 python3-pyqt4-dbg \
 python3-pyqt5-dbg \
-python-pyqtgraph-doc \
-python-scipy-doc \
 python3-tk-dbg \
 python3.6-venv \
-python3.6-doc \
 binfmt-support \
 python3-qwt-qt5 \
 xdg-user-dirs
