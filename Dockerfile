@@ -46,7 +46,7 @@ RUN apt-get install -yq \
 
 
 # Install missing files
-COPY gnuradio /usr/lib/x86_64-linux-gnu/cmake/
+COPY gnuradio /usr/lib/x86_64-linux-gnu/cmake/gnuradio
 
 # Install some examples
-COPY grc-examples /root/desktop
+COPY grc-examples /root/Desktop/grc-examples
