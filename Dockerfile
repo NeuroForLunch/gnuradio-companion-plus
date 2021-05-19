@@ -18,7 +18,7 @@ RUN apt-get install -yq \
   liborc-0.4-dev \
   liborc-0.4-dev-bin \
   liblog4cpp5-dev \
-  liblog4cpp5v5
+  liblog4cpp5v5 \
   libzmq3-dev \
   libsdl-dev \
   thrift-compiler \
