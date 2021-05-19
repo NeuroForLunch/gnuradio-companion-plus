@@ -195,10 +195,8 @@ libtdb1 \
 libtsan0 \
 libubsan0 \
 libuhd003.010.003 \
-libvolk2-bin \
-libvolk2-dev \
-libvolk2.0 \
-libvolk2.2 \
+lib
+2-bin \
 libwacom-bin \
 libwacom-common \
 libwacom2 \
@@ -470,10 +468,6 @@ libtdb1 \
 libtsan0 \
 libubsan0 \
 libuhd003.010.003 \
-libvolk2-bin \
-libvolk2-dev \
-libvolk2.0 \
-libvolk2.2 \
 libwacom-bin \
 libwacom-common \
 libwacom2 \
@@ -644,11 +638,6 @@ libgraphite2-utils
 
 
 RUN apt-get install -yq \
-gsl-ref-psdoc \
-gsl-doc-pdf \
-gsl-doc-info \
-gsl-ref-html \
-icu-doc \
 libjs-jquery-ui-docs \
 libqt4-declarative-folderlistmodel \
 libqt4-declarative-gestures \
@@ -660,8 +649,6 @@ qt5-image-formats-plugins \
 qtwayland5 \
 libicu55 \
 qt4-qtconfig \
-libstdc++-7-doc \
-libvolk2-doc \
 make-doc \
 man-browser \
 ed \
