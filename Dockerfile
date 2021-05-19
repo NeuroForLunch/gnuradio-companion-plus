@@ -69,7 +69,7 @@ libboost-test-dev \
 libboost-test1.65-dev \
 libboost-test1.65.1 \
 libboost-thread-dev \
-libboost-thread1.65-dev
+libboost-thread1.65-dev \
 libboost-thread1.65.1 \
 libboost1.65-dev
 
