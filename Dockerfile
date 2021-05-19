@@ -650,7 +650,6 @@ libterm-readline-gnu-perl
 RUN apt-get install -yq \
 libterm-readline-perl-perl \
 python-cryptography-vectors \
-python-openssl-dbg \
 python-socks \
 tix \
 python-tk-dbg \
@@ -666,7 +665,6 @@ inkscape \
 ipython3 \
 python-matplotlib-doc \
 python3-cairocffi \
-python3-gobject \
 python3-nose \
 python3-tornado \
 texlive-extra-utils \
@@ -683,5 +681,4 @@ python3-pyqt5-dbg \
 python3-tk-dbg \
 python3.6-venv \
 binfmt-support \
-python3-qwt-qt5 \
 xdg-user-dirs
