@@ -333,7 +333,7 @@ libbinutils \
 libblas3 \
 libboost-atomic1.65-dev \
 libboost-atomic1.65.1 \
-libboost-chrono1.65-dev
+libboost-chrono1.65-dev \
 libboost-chrono1.65.1 \
 libboost-date-time-dev \
 libboost-date-time1.65-dev \
@@ -354,7 +354,7 @@ libboost-system1.65-dev \
 libboost-system1.65.1 \
 libboost-test-dev \
 libboost-test1.65-dev \
-libboost-test1.65.1
+libboost-test1.65.1 \
 libboost-thread-dev \
 libboost-thread1.65-dev \
 libboost-thread1.65.1 \
@@ -365,7 +365,7 @@ libcanberra-gtk-module \
 libcanberra-gtk0 \
 libcanberra-gtk3-0 \
 libcanberra-gtk3-module \
-libcanberra0
+libcanberra0 \
 libcc1-0 \
 libcilkrts5 \
 libcodec2-0.7 \
@@ -531,7 +531,7 @@ python3-markupsafe \
 python3-matplotlib \
 python3-networkx \
 python3-numpy \
-python3-olefile
+python3-olefile \
 python3-opengl \
 python3-pil \
 python3-pkg-resources \
@@ -558,7 +558,7 @@ sound-theme-freedesktop \
 tk8.6-blt2.5 \
 ttf-bitstream-vera \
 uhd-host \
-zlib1g-dev \
+zlib1g-dev
 
 
 
@@ -620,7 +620,7 @@ libboost-mpi1.65-dev \
 libboost-mpi-python1.65-dev \
 libboost-numpy1.65-dev \
 libboost-python1.65-dev \
-libboost-random1.65-dev
+libboost-random1.65-dev \
 libboost-signals1.65-dev \
 libboost-stacktrace1.65-dev \
 libboost-timer1.65-dev \
