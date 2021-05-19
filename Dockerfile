@@ -439,7 +439,7 @@ libqt4-scripttools \
 libqt4-sql \
 libqt4-sql-mysql \
 libqt4-svg \
-libqt4-test
+libqt4-test \
 libqt4-xml \
 libqt4-xmlpatterns
 
