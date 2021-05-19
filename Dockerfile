@@ -85,7 +85,7 @@ libcanberra-gtk3-module \
 libcanberra0 \
 libcc1-0 \
 libcilkrts5 \
-libcodec2-0.7
+libcodec2-0.7 \
 libcppunit-1.14-0 \
 libcppunit-dev \
 libdouble-conversion1 \
