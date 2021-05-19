@@ -23,10 +23,10 @@ endif()
 set(__INCLUDED_GR_VERSION_CMAKE TRUE)
 
 #eventually, replace version.sh and fill in the variables below
-set(MAJOR_VERSION ${VERSION_INFO_MAJOR_VERSION})
-set(API_COMPAT    ${VERSION_INFO_API_COMPAT})
-set(MINOR_VERSION ${VERSION_INFO_MINOR_VERSION})
-set(MAINT_VERSION ${VERSION_INFO_MAINT_VERSION})
+set(MAJOR_VERSION ${VERSION_MAJOR})
+set(API_COMPAT    ${VERSION_API})
+set(MINOR_VERSION ${VERSION_ABI})
+set(MAINT_VERSION ${VERSION_PATCH})
 
 ########################################################################
 # Extract the version string from git describe.
@@ -83,15 +83,9 @@ else()
     # VERSION: 3.3.1{.x}
     # DOCVER:  3.3.1{.x}
     # LIBVER:  3.3.1{.x}
-    # Should rewrite this based upon abi-compliance-checker results
-    if("${MAINT_VERSION}" STREQUAL "0")
-        set(VERSION "${MAJOR_VERSION}.${API_COMPAT}.${MINOR_VERSION}")
-    else()
-        set(VERSION "${MAJOR_VERSION}.${API_COMPAT}.${MINOR_VERSION}")
-        # set(VERSION "${MAJOR_VERSION}.${API_COMPAT}.${MINOR_VERSION}.${MAINT_VERSION}")
-    endif()
+    set(VERSION "${MAJOR_VERSION}.${API_COMPAT}.${MINOR_VERSION}.${MAINT_VERSION}")
     set(DOCVER "${VERSION}")
-    set(LIBVER "${VERSION}")
+    set(LIBVER "${MAJOR_VERSION}.${API_COMPAT}.${MINOR_VERSION}")
     set(RC_MINOR_VERSION ${MINOR_VERSION})
     set(RC_MAINT_VERSION ${MAINT_VERSION})
 endif()

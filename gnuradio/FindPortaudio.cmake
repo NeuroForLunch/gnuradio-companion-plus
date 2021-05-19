@@ -5,7 +5,9 @@
 #  PORTAUDIO_INCLUDE_DIRS - the Portaudio include directory
 #  PORTAUDIO_LIBRARIES - Link these to use Portaudio
 
-include(FindPkgConfig)
+if(NOT PKG_CONFIG_FOUND)
+  include(FindPkgConfig)
+endif()
 pkg_check_modules(PC_PORTAUDIO portaudio-2.0)
 
 find_path(PORTAUDIO_INCLUDE_DIRS
@@ -31,6 +33,7 @@ find_library(PORTAUDIO_LIBRARIES
 
 mark_as_advanced(PORTAUDIO_INCLUDE_DIRS PORTAUDIO_LIBRARIES)
 
+
 # Found PORTAUDIO, but it may be version 18 which is not acceptable.
 if(EXISTS ${PORTAUDIO_INCLUDE_DIRS}/portaudio.h)
   include(CheckCXXSourceCompiles)
@@ -44,6 +47,13 @@ if(EXISTS ${PORTAUDIO_INCLUDE_DIRS}/portaudio.h)
   if(PORTAUDIO2_FOUND)
     INCLUDE(FindPackageHandleStandardArgs)
     FIND_PACKAGE_HANDLE_STANDARD_ARGS(PORTAUDIO DEFAULT_MSG PORTAUDIO_INCLUDE_DIRS PORTAUDIO_LIBRARIES)
+    if (PORTAUDIO_FOUND AND NOT TARGET Portaudio::Portaudio)
+      add_library(Portaudio::Portaudio INTERFACE IMPORTED)
+      set_target_properties(Portaudio::Portaudio PROPERTIES
+        INTERFACE_INCLUDE_DIRECTORIES "${PORTAUDIO_INCLUDE_DIRS}"
+        INTERFACE_LINK_LIBRARIES "${PORTAUDIO_LIBRARIES}"
+        )
+    endif()
   else(PORTAUDIO2_FOUND)
     message(STATUS
       "  portaudio.h not compatible (requires API 2.0)")
