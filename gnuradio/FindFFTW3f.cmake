@@ -25,6 +25,7 @@ FIND_LIBRARY(
     PATHS /usr/local/lib
           /usr/lib
           /usr/lib64
+          /usr/lib/x86_64-linux-gnu
 )
 
 FIND_LIBRARY(
@@ -35,6 +36,7 @@ FIND_LIBRARY(
     PATHS /usr/local/lib
           /usr/lib
           /usr/lib64
+          /usr/lib/x86_64-linux-gnu
 )
 
 
