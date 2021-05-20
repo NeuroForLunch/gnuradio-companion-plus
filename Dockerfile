@@ -1,4 +1,4 @@
-FROM neuroforlunch/gnuradio-companion-plus:p2
+FROM neuroforlunch/gnuradio-companion-plus:p3
 
 # Install gr-fosphor
 RUN mkdir -p /src \
