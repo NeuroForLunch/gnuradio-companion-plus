@@ -75,16 +75,16 @@ RUN mkdir -p /src \
 
 # GNU Radio Sandia Utilities
 # https://github.com/sandialabs/gr-sandia_utils
-RUN mkdir -p /src \
-  && cd /src \
-  && git clone https://github.com/sandialabs/gr-sandia_utils.git --branch maint-3.8 \
-  && cd gr-sandia_utils \
-  && mkdir build \
-  && cd build \
-  && cmake .. \
-  && make install \
-  && ldconfig \
-  && cd / \
-  && rm -rf /src/
+#RUN mkdir -p /src \
+#  && cd /src \
+#  && git clone https://github.com/sandialabs/gr-sandia_utils.git --branch maint-3.8 \
+#  && cd gr-sandia_utils \
+#  && mkdir build \
+#  && cd build \
+#  && cmake .. \
+#  && make install \
+#  && ldconfig \
+#  && cd / \
+#  && rm -rf /src/
 
 
