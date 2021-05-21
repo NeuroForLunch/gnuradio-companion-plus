@@ -1,5 +1,32 @@
 FROM neuroforlunch/gnuradio-companion-plus:p9
 
+RUN sudo mkdir -p /src \
+  && git clone --depth 1 https://github.com/gnuradio/gnuradio.git /src/gnuradio --branch maint-3.8 \
+  && cd /src/gnuradio \
+  && mkdir build
+RUN cd build && cmake -DENABLE_INTERNAL_VOLK=OFF ../
+RUN make
+RUN make install
+RUN ldconfig \
+&& cd / \
+&& rm -rf /src
+
+
+# GNU Radio OsmoSDR
+# https://osmocom.org/projects/gr-osmosdr/wiki/GrOsmoSDR
+RUN mkdir -p /src \
+  && cd /src \
+  && git clone https://github.com/osmocom/gr-osmosdr.git --branch gr3.8 \
+  && cd gr-osmosdr \
+  && mkdir build \
+  && cd build \
+  && cmake .. \
+  && make install \
+  && ldconfig \
+  && cd / \
+  && rm -rf /src/
+
+
 # GNU Radio PDU Utilities
 # https://github.com/sandialabs/gr-pdu_utils
 RUN mkdir -p /src \
@@ -60,16 +87,3 @@ RUN mkdir -p /src \
   && rm -rf /src/
 
 
-# GNU Radio OsmoSDR
-# https://osmocom.org/projects/gr-osmosdr/wiki/GrOsmoSDR
-RUN mkdir -p /src \
-  && cd /src \
-  && git clone https://github.com/osmocom/gr-osmosdr.git --branch gr3.8 \
-  && cd gr-osmosdr \
-  && mkdir build \
-  && cd build \
-  && cmake .. \
-  && make install \
-  && ldconfig \
-  && cd / \
-  && rm -rf /src/
