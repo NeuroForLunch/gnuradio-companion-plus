@@ -52,6 +52,7 @@ RUN apt-get install -yq \
 
 # had issue with finding this one but synaptic found it
 # see what succeeds and remove the other
+# only required for testing so this can be ignored
 RUN apt-get -yq install python3-zmq
 
 RUN apt -yq install python3-zmq
