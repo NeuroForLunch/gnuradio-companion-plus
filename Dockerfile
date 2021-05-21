@@ -1,8 +1,7 @@
 FROM neuroforlunch/gnuradio-companion-plus:p1
 
 
-RUN pip install orbit-predictor \
-  && pip3 install orbit-predictor
+RUN pip install orbit-predictor && pip3 install orbit-predictor
 
 RUN apt-get install -yq \
   libboost-dev \
@@ -32,6 +31,7 @@ RUN apt-get install -yq \
   bison \
   flex \
   g++ \
+  libclang1-6.0 \
   libevent-dev \
   libssl-dev \
   libtool \
@@ -40,13 +40,25 @@ RUN apt-get install -yq \
   python-all \
   python-all-dev \
   python-all-dbg \
+  python-babel-localedata \
   python3-all \
+  python3-all-dbg \
   python3-all-dev \
-  python3-all-dbg
+  python3-babel \
+  python3-click-plugins \
+  python3-imagesize \
+  python3-scipy
+  
+
+# had issue with finding this one but synaptic found it
+# see what succeeds and remove the other
+RUN apt-get -yq install python3-zmq
+
+RUN apt -yq install python3-zmq
 
 
-# Install missing files
-COPY gnuradio /usr/lib/x86_64-linux-gnu/cmake/gnuradio
+# Install missing files (this is not the right way to do it)
+#COPY gnuradio /usr/lib/x86_64-linux-gnu/cmake/gnuradio
 
 # Install some examples
 COPY grc-examples /root/Desktop/grc-examples
