@@ -56,8 +56,7 @@ RUN apt-get install -yq \
   libasound2
 
 
-RUN pip install six \
-  && pip3 install six
+RUN pip install six && pip3 install six
 
 # apt-get sources are outdated for the programs that follow
 
@@ -71,7 +70,7 @@ RUN cd /src/build \
   && ldconfig \
   && volk_profile \
   && cd / \
-  && rm -rf /src/
+  && rm -rf /src
 
 # Install Pybind11
 RUN mkdir -p /src/build
@@ -80,7 +79,8 @@ RUN cd /src/build \
   && cmake -DPYBIND11_TEST=OFF /src/pybind11 \
   && make install \
   && ldconfig \
-  && rm -rf /src/
+  && cd / \
+  && rm -rf /src
 
 # Install SoapySDR
 RUN mkdir -p /src \
@@ -93,26 +93,27 @@ RUN mkdir -p /src \
   && make install \
   && ldconfig \
   && cd / \
-  && rm -rf /src/
+  && rm -rf /src
 
 
 # Install the Multiple Precision Integers and Rationals Library
 RUN mkdir -p /src \
   && git clone https://github.com/wbhart/mpir.git /src/mpir \
-  && cd /src/mpir/ \
+  && cd /src/mpir \
   && ./autogen.sh \
   && ./configure --enable-cxx=detect \
   && make \
   && make install \
   && ldconfig \
+  && cd / \
   && rm -rf /src
 
 
 
 # Install the GNU Multiple Precision Arithmetic Library
 RUN mkdir -p /opt \
-  && git clone https://github.com/NeuroForLunch/gmp-releases.git /opt/gmp/ \
-  && cd /opt/gmp/ \
+  && git clone https://github.com/NeuroForLunch/gmp-releases.git /opt/gmp \
+  && cd /opt/gmp \
   && sh ./configure --enable-cxx=detect \
   && make \
   && make install \
