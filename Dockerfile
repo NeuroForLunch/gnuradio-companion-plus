@@ -85,7 +85,7 @@ RUN cd /src/build \
 # Install SoapySDR
 RUN mkdir -p /src \
   && cd /src \
-  && git clone -b soapy-sdr-0.8.0 https://github.com/pothosware/SoapySDR \
+  && git clone https://github.com/pothosware/SoapySDR --branch soapy-sdr-0.8.0 \
   && cd SoapySDR \
   && mkdir build \
   && cd build \
