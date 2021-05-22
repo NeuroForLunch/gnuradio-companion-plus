@@ -1,69 +1,69 @@
-FROM neuroforlunch/gnuradio-companion-base:v1
+FROM neuroforlunch/gnuradio-companion-base:v2
 
+RUN pip install six \
+    orbit-predictor
 
-# Get the building supplies
-RUN add-apt-repository --remove ppa:gnuradio/gnuradio-releases \
-  && apt-get update \
-  && apt-get install -yq \
-  ca-certificates \
-  apt-utils
-
-RUN apt-get upgrade -yq
+RUN pip3 install six \
+    orbit-predictor
 
 RUN apt-get install -yq \
-  git \
-  gettext \
-  autoconf \
-  automake \
-  autotools-dev \
-  libtool \
-  texinfo \
-  yasm \
-  build-essential \
-  ccache \
-  cmake \
-  swig \
-  libqt4-dev \
-  libqwt-dev \
-  libqwt5-qt4 \
-  libqwt-qt5-dev \
-  libqwt6abi1 \
-  qtbase5-dev \
-  pyqt4-dev-tools \
-  pyqt5-dev-tools \
-  python-dev \
-  python-pip \
-  python3-dev \
-  python3-dbg \
-  python3-pip \
-  xvfb \
-  lcov \
+  libboost-dev \
+  libboost-all-dev \
+  libboost-date-time-dev \
+  libboost-filesystem-dev \
+  libboost-program-options-dev \
+  libboost-system-dev \
+  libboost-thread-dev \
+  libboost-regex-dev \
+  libboost-test-dev \
+  libconfig++-dev \
+  liborc-0.4-dev \
+  liborc-0.4-dev-bin \
+  liblog4cpp5-dev \
+  liblog4cpp5v5 \
+  libzmq3-dev \
+  libsdl-dev \
   thrift-compiler \
-  gawk \
-  byacc \
-  flex
+  fftw3-dev \
+  libuhd-dev \
+  codec2 \
+  ocl-icd-opencl-dev \
+  libfreetype6-dev \
+  libglfw3-dev \
+  libglfw3 \
+  bison \
+  flex \
+  g++ \
+  libclang1-6.0 \
+  libevent-dev \
+  libssl-dev \
+  libtool \
+  make \
+  pkg-config \
+  python-all \
+  python-all-dev \
+  python-all-dbg \
+  python-babel-localedata \
+  python3-all \
+  python3-all-dbg \
+  python3-all-dev \
+  python3-babel \
+  python3-click-plugins \
+  python3-imagesize \
+  python3-scipy \
+  python3-zmq
 
-# Install drivers
-RUN apt-get install -yq \
-  libusb-dev \
-  libusb-1.0-0-dev \
-  graphviz \
-  libportaudio2 \
-  portaudio19-dev \
-  libpulse-dev \
-  libgsl-dev \
-  libgsm1-dev \
-  libasound2
-
-
-RUN pip install six && pip3 install six
-
+############################################################
 # apt-get sources are outdated for the programs that follow
+###########################################################
 
 # Install VOLK
-RUN mkdir -p /src/build
-RUN git clone --recursive https://github.com/gnuradio/volk.git /src/volk --branch v2.4.1
-RUN cd /src/build \
+RUN mkdir -p /src \
+  && cd /src \
+  && git clone --recursive https://github.com/gnuradio/volk.git --branch v2.4.1 \
+  && cd volk \
+  && mkdir build \
+  && cd build \
   && cmake -DCMAKE_BUILD_TYPE=Release ../volk/ \
   && make \
   && make install \
@@ -73,23 +73,13 @@ RUN cd /src/build \
   && rm -rf /src
 
 # Install Pybind11
-RUN mkdir -p /src/build
-RUN git clone --recursive https://github.com/pybind/pybind11.git /src/pybind11 --branch v2.4.0
-RUN cd /src/build \
-  && cmake -DPYBIND11_TEST=OFF /src/pybind11 \
-  && make install \
-  && ldconfig \
-  && cd / \
-  && rm -rf /src
-
-# Install SoapySDR
 RUN mkdir -p /src \
   && cd /src \
-  && git clone https://github.com/pothosware/SoapySDR --branch soapy-sdr-0.8.0 \
-  && cd SoapySDR \
+  && git clone --recursive https://github.com/pybind/pybind11.git --branch v2.4.0 \
+  && cd pybind11 \
   && mkdir build \
   && cd build \
-  && cmake -DCMAKE_INSTALL_PREFIX=/usr .. \
+  && cmake -DPYBIND11_TEST=OFF /src/pybind11 \
   && make install \
   && ldconfig \
   && cd / \
@@ -118,3 +108,31 @@ RUN mkdir -p /opt \
   && make \
   && make install \
   && ldconfig
+
+
+# Install osmocom-rtlsdr
+RUN mkdir -p /src \
+  && cd /src \
+  && git clone https://github.com/osmocom/rtl-sdr.git \
+  && cd rtl-sdr \
+  && mkdir build \
+  && cd build \
+  && cmake ../ -DINSTALL_UDEV_RULES=ON \
+  && make install \
+  && ldconfig \
+  && cd / \
+  && rm -rf /src
+  
+  
+# Install SoapySDR
+RUN mkdir -p /src \
+  && cd /src \
+  && git clone https://github.com/pothosware/SoapySDR --branch soapy-sdr-0.8.0 \
+  && cd SoapySDR \
+  && mkdir build \
+  && cd build \
+  && cmake -DCMAKE_INSTALL_PREFIX=/usr .. \
+  && make install \
+  && ldconfig \
+  && cd / \
+  && rm -rf /src
