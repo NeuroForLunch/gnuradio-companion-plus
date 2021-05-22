@@ -64,7 +64,7 @@ RUN mkdir -p /src \
   && cd volk \
   && mkdir build \
   && cd build \
-  && cmake -DCMAKE_BUILD_TYPE=Release ../volk/ \
+  && cmake .. \
   && make \
   && make install \
   && ldconfig \
