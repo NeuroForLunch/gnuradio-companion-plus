@@ -1,10 +1,12 @@
 FROM neuroforlunch/gnuradio-companion-base:v2
 
 RUN pip install six \
-    orbit-predictor
+    orbit-predictor \
+    Mako
 
 RUN pip3 install six \
-    orbit-predictor
+    orbit-predictor \
+    Mako
 
 RUN apt-get install -yq \
   libboost-dev \
