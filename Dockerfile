@@ -1,4 +1,4 @@
-FROM neuroforlunch/gnuradio-companion-base:v2
+FROM neuroforlunch/gnuradio-companion-plus:p0
 
 RUN pip install six \
     orbit-predictor \
