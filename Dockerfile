@@ -19,6 +19,8 @@ RUN mkdir -p /src \
 # and create file with those contents here:
 # /etc/profile.d/gnuradio.sh
 
+# Blacklist the device as well
+
 # Install gr-radar
 RUN mkdir -p /src \
   && cd /src \
