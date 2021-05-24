@@ -1,13 +1,5 @@
 FROM neuroforlunch/gnuradio-companion-plus:p0
 
-RUN pip install six \
-    orbit-predictor \
-    Mako
-
-RUN pip3 install six \
-    orbit-predictor \
-    Mako
-
 RUN apt-get install -yq \
   libboost-dev \
   libboost-all-dev \
@@ -55,14 +47,17 @@ RUN apt-get install -yq \
   python3-scipy \
   python3-zmq
 
+
 ############################################################
-# apt-get sources are outdated for the programs that follow
+# Build from source to get up to date versions
 ###########################################################
+
 
 # Install VOLK
 RUN mkdir -p /src \
   && cd /src \
-  && git clone --recursive https://github.com/gnuradio/volk.git --branch v2.4.1 \
+  && pip3 install six Mako \
+  && git clone https://github.com/gnuradio/volk.git --recursive --branch v2.4.1 \
   && cd volk \
   && mkdir build \
   && cd build \
@@ -74,10 +69,11 @@ RUN mkdir -p /src \
   && cd / \
   && rm -rf /src
 
+
 # Install Pybind11
 RUN mkdir -p /src \
   && cd /src \
-  && git clone --recursive https://github.com/pybind/pybind11.git --branch v2.4.0 \
+  && git clone https://github.com/pybind/pybind11.git --recursive --branch v2.4.0 \
   && cd pybind11 \
   && mkdir build \
   && cd build \
@@ -101,12 +97,11 @@ RUN mkdir -p /src \
   && rm -rf /src
 
 
-
 # Install the GNU Multiple Precision Arithmetic Library
 RUN mkdir -p /opt \
   && git clone https://github.com/NeuroForLunch/gmp-releases.git /opt/gmp \
   && cd /opt/gmp \
-  && sh ./configure --enable-cxx=detect \
+  && ./configure --enable-cxx=detect \
   && make \
   && make install \
   && ldconfig
@@ -119,7 +114,7 @@ RUN mkdir -p /src \
   && cd rtl-sdr \
   && mkdir build \
   && cd build \
-  && cmake ../ -DINSTALL_UDEV_RULES=ON \
+  && cmake .. -DINSTALL_UDEV_RULES=ON \
   && make install \
   && ldconfig \
   && cd / \
@@ -133,7 +128,7 @@ RUN mkdir -p /src \
   && cd SoapySDR \
   && mkdir build \
   && cd build \
-  && cmake -DCMAKE_INSTALL_PREFIX=/usr .. \
+  && cmake .. \
   && make install \
   && ldconfig \
   && cd / \
