@@ -1,9 +1,10 @@
 FROM neuroforlunch/gnuradio-companion-plus:p2
 
 # Install GNUradio
-RUN sudo mkdir -p /src \
-  && git clone --depth 1 https://github.com/gnuradio/gnuradio.git /src/gnuradio --branch maint-3.8 \
-  && cd /src/gnuradio \
+RUN mkdir -p /src \
+  && cd /src \
+  && git clone https://github.com/NeuroForLunch/gnuradio-darkmode.git --depth 1 --branch maint-3.8 \
+  && cd gnuradio-darkmode \
   && mkdir build \
   && cd build && cmake -DENABLE_INTERNAL_VOLK=OFF ../ \
   && make \
