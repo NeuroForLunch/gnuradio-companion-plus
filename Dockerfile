@@ -13,6 +13,11 @@ RUN mkdir -p /src \
   && cd / \
   && rm -rf /src
 
+# export "PYTHONPATH=/usr/local/lib/python3/dist-packages:/usr/local/lib/python3.6/dist-packages:$PYTHONPATH"
+# export "LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH"
+# Add above to ~/.profile 
+# and create file with those contents here:
+# /etc/profile.d/gnuradio.sh
 
 # Install gr-radar
 RUN mkdir -p /src \
