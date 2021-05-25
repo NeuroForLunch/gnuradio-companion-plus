@@ -7,6 +7,8 @@ python-gi-cairo
 
 
 # Install GNUradio
+# Blacklist the rtl dongle to prevent the system from auto-using it for TV purposes
+# Add the necessary exports to have GRC load correctly
 RUN mkdir -p /src \
   && cd /src \
   && git clone https://github.com/NeuroForLunch/gnuradio-darkmode.git --depth 1 --branch maint-3.8 \
@@ -17,13 +19,12 @@ RUN mkdir -p /src \
   && make install \
   && ldconfig \
   && cd / \
-  && rm -rf /src
-
-# export "PYTHONPATH=/usr/local/lib/python3/dist-packages:/usr/local/lib/python3.6/dist-packages:$PYTHONPATH"
-# export "LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH"
-# Add above to ~/.profile 
-# and create file with those contents here:
-# /etc/profile.d/gnuradio.sh
+  && rm -rf /src \
+  && print "blacklist rtl2832\nblacklist rtl2830" > /etc/modprobe.d/blacklist-rtlsdr.conf \
+  && print 'export "PYTHONPATH=/usr/local/lib/python3/dist-packages:/usr/local/lib/python3.6/dist-packages:$PYTHONPATH"' >> ~/.profile \
+  && print 'export "LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH"' >> ~/.profile \
+  && print 'export "PYTHONPATH=/usr/local/lib/python3/dist-packages:/usr/local/lib/python3.6/dist-packages:$PYTHONPATH"' > /etc/profile.d/gnuradio.sh \
+  && print 'export "LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH"' >> ~/etc/profile.d/gnuradio.sh
 
 # Blacklist the device as well
 
