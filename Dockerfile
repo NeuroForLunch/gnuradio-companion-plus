@@ -1,6 +1,10 @@
 FROM neuroforlunch/gnuradio-companion-plus:p2
 
-RUN apt-get install -yq libsndfile1-dev
+RUN apt-get install -yq \
+libsndfile1-dev \
+libcairo2-dev \
+python-gi-cairo
+
 
 # Install GNUradio
 RUN mkdir -p /src \
