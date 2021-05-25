@@ -1,5 +1,7 @@
 FROM neuroforlunch/gnuradio-companion-plus:p2
 
+RUN apt-get install -yq libsndfile1-dev
+
 # Install GNUradio
 RUN mkdir -p /src \
   && cd /src \
