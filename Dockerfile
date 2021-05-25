@@ -16,7 +16,7 @@ RUN mkdir -p /src \
   
 RUN mkdir -p /src \
   && cd /src \
-  && git clone https://github.com/pothosware/SoapyRTLSDR.git
+  && git clone https://github.com/pothosware/SoapyRTLSDR.git \
   && cd SoapyRTLSDR \
   && mkdir build \
   && cd build \
