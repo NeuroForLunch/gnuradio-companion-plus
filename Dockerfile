@@ -1,367 +1,88 @@
 FROM neuroforlunch/gnuradio-companion-plus:p1
 
+############################################################
+# Build from source to get up to date versions
+###########################################################
 
-RUN apt-get install -yq \
-blt \
-fonts-lyx \
-javascript-common \
-tk8.6-blt2.5 \
-libcppunit-1.14-0 \
-libcppunit-dev \
-libgmp-dev \
-libjs-jquery \
-libjs-jquery-ui \
-libmysqlclient20 \
-libqt4-sql-mysql \
-libqt5sql5-sqlite \
-mysql-common \
-librtlsdr0 \
-libwacom-bin \
-python-certifi \
-python-chardet \
-python-matplotlib-data \
-python-openssl \
-python-requests \
-python-tk \
-python-urllib3 \
-python3-bs4 \
-python3-chardet \
-python3-cycler \
-python3-dateutil \
-python3-html5lib \
-python3-matplotlib \
-python3-networkx \
-python3-olefile \
-python3-pil \
-python3-pyparsing \
-python3-tk \
-python3-tz \
-python3-webencodings \
-ttf-bitstream-vera \
-qt-at-spi \
-qt5-gtk-platformtheme \
-qttranslations5-l10n \
-blt-demo \
-bzr \
-cron \
-dbus-user-session \
-debian-keyring \
-fonts-mathjax \
-g++-7-multilib \
-g++-multilib \
-gcc-7-locales \
-gcc-7-multilib \
-gcc-multilib \
-gcr \
-gnupg2 \
-lib32asan4 \
-lib32atomic1 \
-lib32cilkrts5 \
-lib32gcc-7-dev \
-lib32gcc1 \
-lib32gomp1 \
-lib32itm1 \
-lib32mpx2 \
-lib32quadmath0 \
-lib32stdc++-7-dev \
-lib32stdc++6 \
-lib32ubsan0 \
-libasan4-dbg \
-libasound2-plugins \
-libatomic1-dbg \
-libb-hooks-endofscope-perl \
-libb-hooks-op-check-perl \
-libc6-dev-i386 \
-libc6-dev-x32 \
-libc6-i386 \
-libc6-x32 \
-libcairo-gobject-perl \
-libcairo-perl \
-libcanberra-pulse \
-libcilkrts5-dbg \
-libclass-method-modifiers-perl \
-libclass-xsaccessor-perl \
-libclone-perl \
-libconfig-any-perl \
-libconfig-general-perl \
-libconfig-tiny-perl \
-libcpanel-json-xs-perl \
-libdata-optlist-perl \
-libdata-perl-perl \
-libdata-record-perl \
-libdevel-callchecker-perl \
-libdevel-globaldestruction-perl \
-libdevel-hide-perl \
-libdynaloader-functions-perl \
-libexporter-lite-perl \
-libexporter-tiny-perl \
-libfile-configdir-perl \
-libfile-find-rule-perl \
-libfile-homedir-perl \
-libfile-which-perl \
-libgcc1-dbg \
-libgck-1-0 \
-libgcr-base-3-1 \
-libgcr-ui-3-1 \
-libgetopt-long-descriptive-perl \
-libgf2x1 \
-libglib-object-introspection-perl \
-libglib-perl \
-libgnupg-interface-perl \
-libgomp1-dbg \
-libgraphite2-utils \
-libgtk3-perl \
-libimport-into-perl \
-libintl-perl \
-libintl-xs-perl \
-libio-stringy-perl \
-libipc-system-simple-perl \
-libitm1-dbg \
-libjs-mathjax \
-libjson-maybexs-perl \
-liblist-moreutils-perl \
-liblsan0-dbg \
-libmime-charset-perl \
-libmodule-implementation-perl \
-libmodule-pluggable-perl \
-libmodule-runtime-perl \
-libmoo-perl \
-libmoox-configfromfile-perl \
-libmoox-file-configdir-perl \
-libmoox-handlesvia-perl \
-libmoox-late-perl \
-libmoox-options-perl \
-libmpfr-dev \
-libmpfrc++-dev \
-libmpx2-dbg \
-libnamespace-clean-perl \
-libnet-dbus-glib-perl \
-libnet-dbus-perl \
-libntl-dev \
-libntl35 \
-libnumber-compare-perl \
-libpackage-stash-perl \
-libpackage-stash-xs-perl \
-libpango-perl \
-libparams-classify-perl \
-libparams-util-perl \
-libparams-validate-perl \
-libpath-class-perl \
-libpath-tiny-perl \
-libpulsedsp \
-libquadmath0-dbg \
-libreadonly-perl \
-libref-util-perl \
-libref-util-xs-perl \
-libregexp-common-perl \
-librole-tiny-perl \
-libsnapd-glib1 \
-libsombok3 \
-libspeexdsp1 \
-libstdc++6-7-dbg \
-libstrictures-perl \
-libsub-exporter-perl \
-libsub-exporter-progressive-perl \
-libsub-identify-perl \
-libsub-install-perl \
-libsub-name-perl \
-libsub-quote-perl \
-libsub-uplevel-perl \
-libterm-size-any-perl \
-libterm-size-perl-perl \
-libtext-glob-perl \
-libtie-ixhash-perl \
-libtime-duration-parse-perl \
-libtime-duration-perl \
-libtsan0-dbg \
-libtype-tiny-perl \
-libtype-tiny-xs-perl \
-libtypes-path-tiny-perl \
-libubsan0-dbg \
-libunicode-linebreak-perl \
-libunicode-utf8-perl \
-libvariable-magic-perl \
-libwebrtc-audio-processing1 \
-libx32asan4 \
-libx32atomic1 \
-libx32cilkrts5 \
-libx32gcc-7-dev \
-libx32gcc1 \
-libx32gomp1 \
-libx32itm1 \
-libx32quadmath0 \
-libx32stdc++-7-dev \
-libx32stdc++6 \
-libx32ubsan0 \
-libxml-twig-perl \
-libxml-xpathengine-perl \
-libyaml-libyaml-perl \
-locales \
-logrotate \
-nas \
-pinentry-gnome3 \
-pulseaudio \
-pulseaudio-utils \
-python-bzrlib \
-python-configobj \
-python-httplib2 \
-python-launchpadlib \
-python-lazr.restfulclient \
-python-lazr.uri \
-python-oauth \
-python-simplejson \
-python-wadllib \
-python-zope.interface \
-rtkit \
-scdaemon \
-xloadimage \
-fonts-droid-fallback \
-fonts-noto-mono \
-ghostscript \
-gsfonts \
-imagemagick \
-imagemagick-6-common \
-imagemagick-6.q16 \
-libc-ares2 \
-libcupsfilters1 \
-libcupsimage2 \
-libdjvulibre-text \
-libdjvulibre21 \
-libgl1-mesa-glx \
-libgs9 \
-libgs9-common \
-libhttp-parser2.7.1 \
-libijs-0.35 \
-libilmbase12 \
-libjbig2dec0 \
-libjs-jquery-mousewheel \
-liblqr-1-0 \
-libmagickcore-6.q16-3 \
-libmagickcore-6.q16-3-extra \
-libmagickwand-6.q16-3 \
-libnetpbm10 \
-libopenexr22 \
-libpaper-utils \
-libpaper1 \
-libqt5qml5 \
-libqt5quick5 \
-libqt5waylandclient5 \
-libqt5waylandcompositor5 \
-libwmf0.2-7 \
-netpbm \
-node-requirejs \
-nodejs \
-poppler-data \
-binfmt-support \
-dvipng \
-fig2dev \
-fonts-lato \
-fonts-lmodern \
-fonts-texgyre \
-gfortran \
-gfortran-7 \
-inkscape \
-ipython3 \
-libatkmm-1.6-1v5 \
-libcairomm-1.0-1v5 \
-libcdr-0.1-1 \
-libgc1c2 \
-libgfortran-7-dev \
-libgle3 \
-libglibmm-2.4-1v5 \
-libgtkmm-2.4-1v5 \
-libgtkspell0 \
-libimage-magick-perl \
-libimage-magick-q16-perl \
-libjs-underscore \
-libkpathsea6 \
-libmagick++-6.q16-7 \
-libpangomm-1.4-1v5 \
-libpipeline1 \
-libpoppler-glib8 \
-libpoppler73 \
-libpotrace0 \
-libptexenc1 \
-librevenge-0.0-0 \
-libruby2.5 \
-libsigc++-2.0-0v5 \
-libsynctex1 \
-libterm-readkey-perl \
-libterm-readline-perl-perl \
-libtexlua52 \
-libtexluajit2 \
-libvisio-0.1-1 \
-libwmf-bin \
-libwpd-0.10-10 \
-libwpg-0.3-3 \
-libyaml-tiny-perl \
-libzzip-0-13 \
-lmodern \
-preview-latex-style \
-python-bs4 \
-python-cryptography-vectors \
-python-html5lib \
-python-lxml \
-python-ntlm \
-python-numpy \
-python-scour \
-python-socks \
-python-tk-dbg \
-python-webencodings \
-python3-beaker \
-python3-cairocffi \
-python3-cffi \
-python3-genshi \
-python3-ipython \
-python3-ipython-genutils \
-python3-lxml-dbg \
-python3-nose \
-python3-numpy-dbg \
-python3-pexpect \
-python3-pickleshare \
-python3-pil-dbg \
-python3-ply \
-python3-prompt-toolkit \
-python3-ptyprocess \
-python3-pycparser \
-python3-pydotplus \
-python3-pygments \
-python3-pyqt4-dbg \
-python3-pyqt5-dbg \
-python3-scour \
-python3-simplegeneric \
-python3-sip-dbg \
-python3-tk-dbg \
-python3-tornado \
-python3-traitlets \
-python3-wcwidth \
-python3-xcffib \
-python3.6-venv \
-rake \
-ruby \
-ruby-did-you-mean \
-ruby-minitest \
-ruby-net-telnet \
-ruby-power-assert \
-ruby-test-unit \
-ruby2.5 \
-rubygems-integration \
-scour \
-t1utils \
-tex-gyre \
-texlive-base \
-texlive-binaries \
-texlive-extra-utils \
-texlive-fonts-recommended \
-texlive-latex-base \
-texlive-latex-extra \
-texlive-latex-recommended \
-texlive-pictures \
-texlive-plain-generic \
-tipa \
-tix \
-transfig \
-ttf-staypuft \
-unzip \
-xdg-user-dirs \
-zip
+
+# Install VOLK
+RUN mkdir -p /src \
+  && cd /src \
+  && pip3 install six Mako \
+  && git clone https://github.com/gnuradio/volk.git --recursive --branch v2.4.1 \
+  && cd volk \
+  && mkdir build \
+  && cd build \
+  && cmake .. \
+  && make \
+  && make install \
+  && ldconfig \
+  && volk_profile \
+  && cd / \
+  && rm -rf /src
+
+
+# Install Pybind11
+RUN mkdir -p /src \
+  && cd /src \
+  && git clone https://github.com/pybind/pybind11.git --recursive --branch v2.4.0 \
+  && cd pybind11 \
+  && mkdir build \
+  && cd build \
+  && cmake -DPYBIND11_TEST=OFF /src/pybind11 \
+  && make install \
+  && ldconfig \
+  && cd / \
+  && rm -rf /src
+
+
+# Install the Multiple Precision Integers and Rationals Library
+RUN mkdir -p /src \
+  && git clone https://github.com/wbhart/mpir.git /src/mpir \
+  && cd /src/mpir \
+  && ./autogen.sh \
+  && ./configure --enable-cxx=detect \
+  && make \
+  && make install \
+  && ldconfig \
+  && cd / \
+  && rm -rf /src
+
+
+# Install the GNU Multiple Precision Arithmetic Library
+RUN mkdir -p /opt \
+  && git clone https://github.com/NeuroForLunch/gmp-releases.git /opt/gmp \
+  && cd /opt/gmp \
+  && ./configure --enable-cxx=detect \
+  && make \
+  && make install \
+  && ldconfig
+
+
+# Install osmocom-rtlsdr
+RUN mkdir -p /src \
+  && cd /src \
+  && git clone https://github.com/osmocom/rtl-sdr.git \
+  && cd rtl-sdr \
+  && mkdir build \
+  && cd build \
+  && cmake .. -DINSTALL_UDEV_RULES=ON \
+  && make install \
+  && ldconfig \
+  && cd / \
+  && rm -rf /src
+  
+  
+# Install SoapySDR
+RUN mkdir -p /src \
+  && cd /src \
+  && git clone https://github.com/pothosware/SoapySDR --branch soapy-sdr-0.8.0 \
+  && cd SoapySDR \
+  && mkdir build \
+  && cd build \
+  && cmake .. \
+  && make install \
+  && ldconfig \
+  && cd / \
+  && rm -rf /src
+
