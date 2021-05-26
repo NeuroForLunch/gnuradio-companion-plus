@@ -24,7 +24,7 @@ RUN mkdir -p /src \
   && echo 'export "PYTHONPATH=/usr/local/lib/python3/dist-packages:/usr/local/lib/python3.6/dist-packages:$PYTHONPATH"' >> ~/.profile \
   && echo 'export "LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH"' >> ~/.profile \
   && echo 'export "PYTHONPATH=/usr/local/lib/python3/dist-packages:/usr/local/lib/python3.6/dist-packages:$PYTHONPATH"' > /etc/profile.d/gnuradio.sh \
-  && echo 'export "LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH"' >> ~/etc/profile.d/gnuradio.sh
+  && echo 'export "LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH"' >> /etc/profile.d/gnuradio.sh
 
 # Blacklist the device as well
 
