@@ -43,7 +43,7 @@ RUN mkdir -p /src \
   && cd /src \
   && git clone https://github.com/Hamlib/Hamlib.git --depth 1 \
   && cd Hamlib \
-  && ./bootsrap \
+  && ./bootstrap \
   && ./configure \
   && make \
   && make install \
