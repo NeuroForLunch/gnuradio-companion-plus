@@ -1,27 +1,22 @@
-FROM neuroforlunch/gnuradio-companion-plus:p1
+FROM neuroforlunch/gnuradio-companion-plus:p1-apt-dependencies
 
 ############################################################
 # Build from source to get up to date versions
 ###########################################################
 
-
-# Install VOLK
+# Install cmake 3.20.3
 RUN mkdir -p /src \
   && cd /src \
-  && pip3 install six Mako \
-  && git clone https://github.com/gnuradio/volk.git --recursive --branch v2.4.1 \
-  && cd volk \
-  && mkdir build \
-  && cd build \
-  && cmake .. \
+  && git clone https://gitlab.kitware.com/cmake/cmake.git --branch release \
+  && cd cmake \
+  && ./bootstrap \
   && make \
   && make install \
   && ldconfig \
-  && volk_profile \
   && cd / \
   && rm -rf /src
-
-
+  
+  
 # Install Pybind11
 RUN mkdir -p /src \
   && cd /src \
@@ -83,6 +78,23 @@ RUN mkdir -p /src \
   && cmake .. \
   && make install \
   && ldconfig \
+  && cd / \
+  && rm -rf /src
+  
+  
+# Install VOLK
+RUN mkdir -p /src \
+  && cd /src \
+  && pip3 install six Mako \
+  && git clone https://github.com/gnuradio/volk.git --recursive --branch v2.4.1 \
+  && cd volk \
+  && mkdir build \
+  && cd build \
+  && cmake .. \
+  && make \
+  && make install \
+  && ldconfig \
+  && volk_profile \
   && cd / \
   && rm -rf /src
 
