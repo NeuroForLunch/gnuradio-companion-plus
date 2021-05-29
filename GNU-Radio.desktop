@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=3.8
+Type=Application
+Name=GNU-Radio
+Exec=gnuradio-companion %F
+MimeType=application/gnuradio-grc;
+Icon=gnuradio-grc
+StartupWMClass=gnuradio-companion
