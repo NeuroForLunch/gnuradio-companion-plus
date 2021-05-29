@@ -1,11 +1,17 @@
-# GNU Radio Companion Plus
+# GNU Radio Companion Plus: Dockerized for ease of use.
 
-## Dockerized for ease of use.
+<p align="center">
+<img src="https://github.com/NeuroForLunch/gnuradio-darkmode/raw/maint-3.8/docs/gnuradio.png" width="75%" />
+</p>
 
-GNU Radio Companion 3.8 accessible via VNC and web browser with additional utilities installed.
+<p align="center">
+<img src="https://github.com/NeuroForLunch/gnuradio-darkmode/raw/maint-3.8/docs/darkmode-1.png" width="100%" />
+</p>
+
+
+### GNU Radio Companion 3.8 accessible via VNC and web browser with additional utilities installed.
 
 ## Installation on a Mac
-
 
 
 First download VirtualBox & Vbox Extensions from Oracle.
