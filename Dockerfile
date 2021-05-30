@@ -5,16 +5,16 @@ FROM neuroforlunch/gnuradio-companion-plus:p1-apt-dependencies
 ###########################################################
 
 # Install cmake 3.20.3
-RUN mkdir -p /src \
-  && cd /src \
-  && git clone https://gitlab.kitware.com/cmake/cmake.git --branch release \
-  && cd cmake \
-  && ./bootstrap \
-  && make \
-  && make install \
-  && ldconfig \
-  && cd / \
-  && rm -rf /src
+# RUN mkdir -p /src \
+#   && cd /src \
+#   && git clone https://gitlab.kitware.com/cmake/cmake.git --branch release \
+#   && cd cmake \
+#   && ./bootstrap \
+#   && make \
+#   && make install \
+#   && ldconfig \
+#   && cd / \
+#   && rm -rf /src
   
   
 # Install Pybind11
