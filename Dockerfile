@@ -1,4 +1,4 @@
-FROM neuroforlunch/gnuradio-companion-plus:p4-modules-group1-u18
+FROM neuroforlunch/gnuradio-companion-plus:p4-modules-group1-u20
 
 # Install gr-radar
 RUN mkdir -p /src \
