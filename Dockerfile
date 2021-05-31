@@ -17,16 +17,10 @@ RUN apt-get install -yq \
   ccache \
   cmake \
   swig \
-  libqt4-dev \
-  libqwt-dev \
-  libqwt5-qt4 \
   libqwt-qt5-dev \
-  libqwt6abi1 \
+  libqwt-qt5-6 \
   qtbase5-dev \
-  pyqt4-dev-tools \
   pyqt5-dev-tools \
-  python-dev \
-  python-pip \
   python3-dev \
   python3-dbg \
   python3-pip \
