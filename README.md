@@ -9,7 +9,7 @@
 </p>
 
 
-### GNU Radio Companion 3.8 accessible via VNC and web browser with additional utilities installed.
+### GNU Radio Companion 3.8 accessible via VNC with additional utilities installed.
 
 ## Installation on a Mac
 
@@ -25,11 +25,14 @@ Install it with default settings but without Kitematic.
 Open terminal and enter
 
 ```bash
-$ docker-machine start
+$ docker-machine create -d virtualbox default
+$ docker-machine env default
+$ eval $(docker-machine env)
 ```
 
-You must enter this on every terminal window you wish to access docker on:
+When you reboot you might have to enter this:
 ```bash
+$ docker-machine start
 $ eval $(docker-machine env)
 ```
 
@@ -42,14 +45,13 @@ Create a folder called `shared-storage` in your home directory to share files be
 Start it with:
 
 ```bash
-docker run -p 5900:5900 -p 8080:80 -v ~/shared-storage:/root/shared-storage neuroforlunch/gnuradio-companion-plus:latest
+docker run -p 5900:5900 -p -v ~/shared-storage:/root/shared-storage neuroforlunch/gnuradio-companion-plus:latest
 ```
 
-Use VNC Viewer to connect to `192.168.99.105:5900`
-
-Or open your browser to: http://192.168.99.105:8080
-
-Your IP given to docker-machine might be different but it will be 192.168.99.XXX where XXX usually starts at 100 or 101.
+Use VNC Viewer to connect to the IP address given by 
+```bash
+$ docker-machine env default
+```
 
 ### Notes
 Dockerfiles are in seperate branches and each one builds upon the previous one to make caching more easy.
