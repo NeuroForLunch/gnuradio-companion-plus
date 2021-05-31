@@ -22,7 +22,6 @@ RUN apt-get install -yq \
   qtbase5-dev \
   pyqt5-dev-tools \
   python3-dev \
-  python3-dbg \
   python3-pip \
   xvfb \
   lcov \
@@ -30,7 +29,6 @@ RUN apt-get install -yq \
   gawk \
   byacc \
   flex \
-  libusb-dev \
   libusb-1.0-0-dev \
   graphviz \
   libportaudio2 \
