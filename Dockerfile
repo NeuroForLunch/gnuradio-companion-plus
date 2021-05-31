@@ -1,4 +1,4 @@
-FROM neuroforlunch/gnuradio-companion-plus:p2-source-dependencies-u18
+FROM neuroforlunch/gnuradio-companion-plus:p2-source-dependencies-u20
 
 RUN apt-get install -yq \
 libsndfile1-dev \
