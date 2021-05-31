@@ -1,4 +1,4 @@
-FROM neuroforlunch/gnuradio-companion-plus:p0-base
+FROM neuroforlunch/gnuradio-companion-plus:p0-secure-base18
 
 RUN apt-get install -yq \
   libboost-dev \
