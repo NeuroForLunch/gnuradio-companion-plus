@@ -36,10 +36,8 @@ RUN apt-get install -yq \
   pkg-config \
   python-all \
   python-all-dev \
-  python-all-dbg \
   python-babel-localedata \
   python3-all \
-  python3-all-dbg \
   python3-all-dev \
   python3-babel \
   python3-click-plugins \
@@ -54,24 +52,17 @@ RUN apt-get install -yq \
   fonts-lyx \
   javascript-common \
   tk8.6-blt2.5 \
-  libcppunit-1.14-0 \
   libcppunit-dev \
   libgmp-dev \
   libjs-jquery \
   libjs-jquery-ui \
-  libmysqlclient20 \
-  libqt4-sql-mysql \
   libqt5sql5-sqlite \
-  mysql-common \
   librtlsdr0 \
-  libwacom-bin \
   python-certifi \
   python-chardet \
   python-matplotlib-data \
   python-openssl \
-  python-requests \
   python-tk \
-  python-urllib3 \
   python3-bs4 \
   python3-chardet \
   python3-cycler \
@@ -102,9 +93,6 @@ RUN apt-get install -yq \
   gcc-multilib \
   gcr \
   gnupg2 \
-  lib32asan4 \
-  lib32atomic1 \
-  lib32cilkrts5 \
   lib32gcc-7-dev \
   lib32gcc1 \
   lib32gomp1 \
@@ -114,9 +102,7 @@ RUN apt-get install -yq \
   lib32stdc++-7-dev \
   lib32stdc++6 \
   lib32ubsan0 \
-  libasan4-dbg \
   libasound2-plugins \
-  libatomic1-dbg \
   libb-hooks-endofscope-perl \
   libb-hooks-op-check-perl \
   libc6-dev-i386 \
@@ -126,7 +112,6 @@ RUN apt-get install -yq \
   libcairo-gobject-perl \
   libcairo-perl \
   libcanberra-pulse \
-  libcilkrts5-dbg \
   libclass-method-modifiers-perl \
   libclass-xsaccessor-perl \
   libclone-perl \
@@ -147,7 +132,6 @@ RUN apt-get install -yq \
   libfile-find-rule-perl \
   libfile-homedir-perl \
   libfile-which-perl \
-  libgcc1-dbg \
   libgck-1-0 \
   libgcr-base-3-1 \
   libgcr-ui-3-1 \
@@ -156,7 +140,6 @@ RUN apt-get install -yq \
   libglib-object-introspection-perl \
   libglib-perl \
   libgnupg-interface-perl \
-  libgomp1-dbg \
   libgraphite2-utils \
   libgtk3-perl \
   libimport-into-perl \
@@ -164,11 +147,9 @@ RUN apt-get install -yq \
   libintl-xs-perl \
   libio-stringy-perl \
   libipc-system-simple-perl \
-  libitm1-dbg \
   libjs-mathjax \
   libjson-maybexs-perl \
   liblist-moreutils-perl \
-  liblsan0-dbg \
   libmime-charset-perl \
   libmodule-implementation-perl \
   libmodule-pluggable-perl \
@@ -180,8 +161,6 @@ RUN apt-get install -yq \
   libmoox-late-perl \
   libmoox-options-perl \
   libmpfr-dev \
-  libmpfrc++-dev \
-  libmpx2-dbg \
   libnamespace-clean-perl \
   libnet-dbus-glib-perl \
   libnet-dbus-perl \
@@ -197,7 +176,6 @@ RUN apt-get install -yq \
   libpath-class-perl \
   libpath-tiny-perl \
   libpulsedsp \
-  libquadmath0-dbg \
   libreadonly-perl \
   libref-util-perl \
   libref-util-xs-perl \
@@ -206,7 +184,6 @@ RUN apt-get install -yq \
   libsnapd-glib1 \
   libsombok3 \
   libspeexdsp1 \
-  libstdc++6-7-dbg \
   libstrictures-perl \
   libsub-exporter-perl \
   libsub-exporter-progressive-perl \
@@ -221,11 +198,9 @@ RUN apt-get install -yq \
   libtie-ixhash-perl \
   libtime-duration-parse-perl \
   libtime-duration-perl \
-  libtsan0-dbg \
   libtype-tiny-perl \
   libtype-tiny-xs-perl \
   libtypes-path-tiny-perl \
-  libubsan0-dbg \
   libunicode-linebreak-perl \
   libunicode-utf8-perl \
   libvariable-magic-perl \
@@ -250,16 +225,6 @@ RUN apt-get install -yq \
   pinentry-gnome3 \
   pulseaudio \
   pulseaudio-utils \
-  python-bzrlib \
-  python-configobj \
-  python-httplib2 \
-  python-launchpadlib \
-  python-lazr.restfulclient \
-  python-lazr.uri \
-  python-oauth \
-  python-simplejson \
-  python-wadllib \
-  python-zope.interface \
   rtkit \
   scdaemon \
   xloadimage \
@@ -286,7 +251,6 @@ RUN apt-get install -yq \
   liblqr-1-0 \
   libmagickcore-6.q16-3 \
   libmagickcore-6.q16-3-extra \
-  libmagickwand-6.q16-3 \
   libnetpbm10 \
   libopenexr22 \
   libpaper-utils \
@@ -308,7 +272,6 @@ RUN apt-get install -yq \
   fonts-texgyre \
   gfortran \
   gfortran-7 \
-  inkscape \
   ipython3 \
   libatkmm-1.6-1v5 \
   libcairomm-1.0-1v5 \
@@ -352,9 +315,8 @@ RUN apt-get install -yq \
   python-lxml \
   python-ntlm \
   python-numpy \
-  python-scour \
+  scour \
   python-socks \
-  python-tk-dbg \
   python-webencodings \
   python3-beaker \
   python3-cairocffi \
@@ -362,29 +324,21 @@ RUN apt-get install -yq \
   python3-genshi \
   python3-ipython \
   python3-ipython-genutils \
-  python3-lxml-dbg \
   python3-nose \
-  python3-numpy-dbg \
   python3-pexpect \
   python3-pickleshare \
-  python3-pil-dbg \
   python3-ply \
   python3-prompt-toolkit \
   python3-ptyprocess \
   python3-pycparser \
   python3-pydotplus \
   python3-pygments \
-  python3-pyqt4-dbg \
-  python3-pyqt5-dbg \
   python3-scour \
   python3-simplegeneric \
-  python3-sip-dbg \
-  python3-tk-dbg \
   python3-tornado \
   python3-traitlets \
   python3-wcwidth \
   python3-xcffib \
-  python3.6-venv \
   rake \
   ruby \
   ruby-did-you-mean \
@@ -392,7 +346,6 @@ RUN apt-get install -yq \
   ruby-net-telnet \
   ruby-power-assert \
   ruby-test-unit \
-  ruby2.5 \
   rubygems-integration \
   scour \
   t1utils \
