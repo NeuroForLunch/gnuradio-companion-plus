@@ -18,7 +18,6 @@ RUN apt-get install -yq \
   libzmq3-dev \
   libsdl-dev \
   fftw3-dev \
-  libuhd-dev \
   codec2 \
   ocl-icd-opencl-dev \
   libfreetype6-dev \
