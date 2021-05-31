@@ -77,7 +77,6 @@ RUN apt-get install -yq \
   python3-tz \
   python3-webencodings \
   ttf-bitstream-vera \
-  qt-at-spi \
   qt5-gtk-platformtheme \
   qttranslations5-l10n \
   blt-demo \
@@ -136,7 +135,6 @@ RUN apt-get install -yq \
   libgcr-base-3-1 \
   libgcr-ui-3-1 \
   libgetopt-long-descriptive-perl \
-  libgf2x1 \
   libglib-object-introspection-perl \
   libglib-perl \
   libgnupg-interface-perl \
@@ -161,11 +159,10 @@ RUN apt-get install -yq \
   libmoox-late-perl \
   libmoox-options-perl \
   libmpfr-dev \
-  libnamespace-clean-perl \
+  lamespace-clean-perl \
   libnet-dbus-glib-perl \
   libnet-dbus-perl \
   libntl-dev \
-  libntl35 \
   libnumber-compare-perl \
   libpackage-stash-perl \
   libpackage-stash-xs-perl \
@@ -243,16 +240,11 @@ RUN apt-get install -yq \
   libgl1-mesa-glx \
   libgs9 \
   libgs9-common \
-  libhttp-parser2.7.1 \
   libijs-0.35 \
-  libilmbase12 \
   libjbig2dec0 \
   libjs-jquery-mousewheel \
   liblqr-1-0 \
-  libmagickcore-6.q16-3 \
-  libmagickcore-6.q16-3-extra \
   libnetpbm10 \
-  libopenexr22 \
   libpaper-utils \
   libpaper1 \
   libqt5qml5 \
@@ -286,20 +278,15 @@ RUN apt-get install -yq \
   libimage-magick-q16-perl \
   libjs-underscore \
   libkpathsea6 \
-  libmagick++-6.q16-7 \
   libpangomm-1.4-1v5 \
   libpipeline1 \
   libpoppler-glib8 \
-  libpoppler73 \
   libpotrace0 \
   libptexenc1 \
   librevenge-0.0-0 \
-  libruby2.5 \
   libsigc++-2.0-0v5 \
-  libsynctex1 \
   libterm-readkey-perl \
   libterm-readline-perl-perl \
-  libtexlua52 \
   libtexluajit2 \
   libvisio-0.1-1 \
   libwmf-bin \
@@ -313,7 +300,6 @@ RUN apt-get install -yq \
   python-cryptography-vectors \
   python-html5lib \
   python-lxml \
-  python-ntlm \
   python-numpy \
   scour \
   python-socks \
