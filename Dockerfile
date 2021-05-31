@@ -1,4 +1,4 @@
-FROM neuroforlunch/gnuradio-companion-plus:p1-apt-dependencies-u18
+FROM neuroforlunch/gnuradio-companion-plus:p1-apt-dependencies-u20
 
 ############################################################
 # Build from source to get up to date versions
