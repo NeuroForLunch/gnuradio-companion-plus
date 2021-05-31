@@ -17,7 +17,6 @@ RUN apt-get install -yq \
   liblog4cpp5v5 \
   libzmq3-dev \
   libsdl-dev \
-  thrift-compiler \
   fftw3-dev \
   libuhd-dev \
   codec2 \
@@ -26,17 +25,9 @@ RUN apt-get install -yq \
   libglfw3-dev \
   libglfw3 \
   bison \
-  flex \
-  g++ \
   libclang1-6.0 \
   libevent-dev \
   libssl-dev \
-  libtool \
-  make \
-  pkg-config \
-  python-all \
-  python-all-dev \
-  python-babel-localedata \
   python3-all \
   python3-all-dev \
   python3-babel \
@@ -48,41 +39,10 @@ RUN apt-get install -yq \
 
 
 RUN apt-get install -yq \
-  blt \
-  fonts-lyx \
-  javascript-common \
-  tk8.6-blt2.5 \
-  libcppunit-dev \
-  libgmp-dev \
-  libjs-jquery \
-  libjs-jquery-ui \
-  libqt5sql5-sqlite \
-  librtlsdr0 \
-  python-certifi \
-  python-chardet \
-  python-matplotlib-data \
-  python-openssl \
-  python-tk \
-  python3-bs4 \
-  python3-chardet \
-  python3-cycler \
-  python3-dateutil \
-  python3-html5lib \
-  python3-matplotlib \
-  python3-networkx \
-  python3-olefile \
-  python3-pil \
-  python3-pyparsing \
-  python3-tk \
-  python3-tz \
-  python3-webencodings \
-  ttf-bitstream-vera \
-  qt5-gtk-platformtheme \
   qttranslations5-l10n \
   blt-demo \
   bzr \
   cron \
-  dbus-user-session \
   debian-keyring \
   fonts-mathjax \
   g++-7-multilib \
@@ -261,7 +221,6 @@ RUN apt-get install -yq \
   fonts-lato \
   fonts-lmodern \
   fonts-texgyre \
-  gfortran \
   gfortran-7 \
   ipython3 \
   libatkmm-1.6-1v5 \
@@ -295,14 +254,7 @@ RUN apt-get install -yq \
   libzzip-0-13 \
   lmodern \
   preview-latex-style \
-  python-bs4 \
-  python-cryptography-vectors \
-  python-html5lib \
-  python-lxml \
-  python-numpy \
   scour \
-  python-socks \
-  python-webencodings \
   python3-beaker \
   python3-cairocffi \
   python3-cffi \
