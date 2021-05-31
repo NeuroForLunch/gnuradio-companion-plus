@@ -1,4 +1,4 @@
-FROM dorowu/ubuntu-desktop-lxde-vnc:bionic
+FROM neuroforlunch/docker-remote-desktop:ubuntu18-amd64-lxde
 
 # Get updates first
 RUN apt-get update && apt-get upgrade -yq
