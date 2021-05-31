@@ -159,7 +159,6 @@ RUN apt-get install -yq \
   libmoox-late-perl \
   libmoox-options-perl \
   libmpfr-dev \
-  lamespace-clean-perl \
   libnet-dbus-glib-perl \
   libnet-dbus-perl \
   libntl-dev \
