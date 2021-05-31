@@ -107,7 +107,7 @@ RUN mkdir -p /src \
   && rm -rf /src  
   
   
-RUN apt-get install -yq libarmadillo-dev libarmadillo8
+RUN apt-get install -yq libarmadillo-dev libarmadillo9
 
 RUN mkdir -p /src \
   && cd /src \
