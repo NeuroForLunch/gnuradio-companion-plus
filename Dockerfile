@@ -1,4 +1,4 @@
-FROM neuroforlunch/gnuradio-companion-plus:p3-gnuradio-darkmode-u18
+FROM neuroforlunch/gnuradio-companion-plus:p3-gnuradio-darkmode-u20
 
 
 RUN mkdir -p /src \
