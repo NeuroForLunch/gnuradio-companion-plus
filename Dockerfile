@@ -3,7 +3,7 @@ FROM neuroforlunch/gnuradio-companion-plus:p4-modules-group1-u20
 # Install gr-radar
 RUN mkdir -p /src \
   && cd /src \
-  && git clone https://github.com/kit-cel/gr-radar.git --branch maint-3.8 \
+  && git clone https://github.com/NeuroForLunch/gr-radar.git --branch maint-3.8 \
   && cd gr-radar \
   && mkdir build \
   && cd build \
