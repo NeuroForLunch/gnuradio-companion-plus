@@ -3,7 +3,10 @@ FROM neuroforlunch/gnuradio-companion-plus:p2-source-dependencies-u20
 RUN apt-get install -yq \
 libsndfile1-dev \
 libcairo2-dev \
-python-gi-cairo
+python3-cairo \
+python3-gi-cairo \
+libcodec2-dev \
+libunwind-dev
 
 
 # Install GNUradio
@@ -21,7 +24,7 @@ RUN mkdir -p /src \
   && cd / \
   && rm -rf /src \
   && echo "blacklist rtl2832\nblacklist rtl2830" > /etc/modprobe.d/blacklist-rtlsdr.conf \
-  && echo 'export "PYTHONPATH=/usr/local/lib/python3/dist-packages:/usr/local/lib/python3.6/dist-packages:$PYTHONPATH"' >> ~/.profile \
+  && echo 'export "PYTHONPATH=/usr/local/lib/python3/dist-packages:/usr/local/lib/python3.8/dist-packages:$PYTHONPATH"' >> ~/.profile \
   && echo 'export "LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH"' >> ~/.profile \
-  && echo 'export "PYTHONPATH=/usr/local/lib/python3/dist-packages:/usr/local/lib/python3.6/dist-packages:$PYTHONPATH"' > /etc/profile.d/gnuradio.sh \
+  && echo 'export "PYTHONPATH=/usr/local/lib/python3/dist-packages:/usr/local/lib/python3.8/dist-packages:$PYTHONPATH"' > /etc/profile.d/gnuradio.sh \
   && echo 'export "LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH"' >> /etc/profile.d/gnuradio.sh
